@@ -117,8 +117,8 @@
     <url>%2F2019%2F07%2F30%2F%E9%A2%98%E8%A7%A3%20P2761%20%E3%80%90%E8%BD%AF%E4%BB%B6%E8%A1%A5%E4%B8%81%E9%97%AE%E9%A2%98%E3%80%91%2F</url>
     <content type="text"><![CDATA[$Dscription$$T$公司发现其研制的一个软件中有$n$个错误，随即为该软件发放了一批共 $m$个补丁程序。每一个补丁程序都有其特定的适用环境，某个补丁只有在软件中包含某些错误而同时又不包含另一些错误时才可以使用。一个补丁在排除某些错误的同时，往往会加入另一些错误。 换句话说，对于每一个补丁$i$，都有 2 个与之相应的错误集合$B1_i$和 $B2_i,$使得仅当软件包含$B1_i$中的所有错误，而不包含$B2_i$中的任何错误时，才可以使用补丁$i$。补丁$i$将修复软件中的某些错误$F1_i,$而同时加入另一些错误$F2_i.$另外，每个补丁都耗费一定的时间。 试设计一个算法，利用$T$公司提供的$m$个补丁程序将原软件修复成一个没有错误的软件，并使修复后的软件耗时最少。对于给定的$n$个错误和$m$个补丁程序，找到总耗时最少的软件修复方案。 $Solution$一个很显然的状压$DP,f_s$表示当从初始状态到病毒状态为$s$时的最小耗时.转移考虑利用最短路 $Code$1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859#include &lt;bits/stdc++.h&gt;#define ll long long#define inf 0x3f3f3f3f#define re register#define N 4000050using namespace std;struct edge&#123; int dis,to,next;&#125;e[N&lt;&lt;2];inline int read()&#123; int x=0,w=0;char ch=getchar(); while (!isdigit(ch))w|=ch=='-',ch=getchar(); while (isdigit(ch))x=(x&lt;&lt;1)+(x&lt;&lt;3)+ch-'0',ch=getchar(); return w?-x:x;&#125;char s[N];int w[N],cnt,head[N],dis[N],inque[N],n,m,b1[N],b2[N],f1[N],f2[N];void spfa(int s)&#123; memset(dis,0x3f,sizeof(dis)); dis[s]=0; queue&lt;int&gt;q;q.push(s); while (!q.empty())&#123; int u=q.front();q.pop();inque[u]=0; for (int i=1;i&lt;=m;++i)&#123; if ((u&amp;b1[i])==b1[i]&amp;&amp;(u&amp;b2[i])==0)&#123; int v=u&amp;(((1&lt;&lt;n)-1)^f1[i])|f2[i]; if (dis[v]&gt;dis[u]+w[i])&#123; dis[v]=dis[u]+w[i]; if (!inque[v]) q.push(v),inque[v]=1; &#125; &#125; &#125; &#125;&#125;signed main()&#123; n=read(),m=read(); for (int i=1;i&lt;=m;++i)&#123; w[i]=read(); scanf("%s",s+1); for (int j=1;j&lt;=n;++j)&#123; if (s[j]=='+') b1[i]|=(1&lt;&lt;j-1); if (s[j]=='-') b2[i]|=(1&lt;&lt;j-1); &#125; scanf("%s",s+1); for (int j=1;j&lt;=n;++j)&#123; if (s[j]=='-') f1[i]|=(1&lt;&lt;j-1); if (s[j]=='+') f2[i]|=(1&lt;&lt;j-1); &#125; &#125; spfa((1&lt;&lt;n)-1); printf("%d\n",dis[0]&gt;=inf?0:dis[0]); return 0;&#125;]]></content>
       <tags>
-        <tag>最短路</tag>
         <tag>网络流$24$题</tag>
+        <tag>最短路</tag>
         <tag>状压$DP$</tag>
       </tags>
   </entry>
@@ -460,21 +460,21 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[题解 CF366C 【Dima and Salad】]]></title>
-    <url>%2F2019%2F05%2F25%2F%E9%A2%98%E8%A7%A3%20CF366C%20%E3%80%90Dima%20and%20Salad%E3%80%91%2F</url>
-    <content type="text"><![CDATA[$Description$有$n$个水果,每个水果有两个属性：美味值和卡路里值。现在选用若干个（至少$1$个）水果制作一份特殊的沙拉，沙拉的美味值为所选的水果的美味值的和，沙拉的卡路里值为所选水果的卡路里值的和。要保证沙拉的美味值恰好是卡路里值的$K$倍。请计算该沙拉美味值最大为多少。 $Solution$根据题意可得$\sum a_{i}-k\times\sum b_{i}=0$ 所以我们考虑将$a_{i}$作为价值，$a_{i}-k\times b_{i}$作为重量，进行背包转移即可，由于重量有可能是负数，所以应用$map$存储转移数组或是将下标强行加上一个大数。 $Code$123456789101112131415161718192021222324#include &lt;bits/stdc++.h&gt;#define ll long long#define re register#define inf 0x3f3f3f3f#define N 30007using namespace std;inline int read()&#123; int x=0,w=0;char ch=getchar(); while (!isdigit(ch))w|=ch=='-',ch=getchar(); while (isdigit(ch))x=(x&lt;&lt;1)+(x&lt;&lt;3)+ch-'0',ch=getchar(); return w?-x:x;&#125;int a[N],v[N],f[200][N],g[200][N];signed main()&#123; int n=read(),k=read(),m=100*n;memset(f,-0x7f,sizeof(f));memset(g,-0x7f,sizeof(g)); for (int i=1;i&lt;=n;++i)a[i]=read(); for (int i=1;i&lt;=n;++i)v[i]=a[i]-read()*k; f[0][m]=0; for (int i=1;i&lt;=n;++i) for (int j=0;j&lt;=2*m;++j) f[i][j]=max(f[i-1][j],f[i-1][j-v[i]]+a[i]); cout&lt;&lt;(f[n][m]!=0?f[n][m]:-1)&lt;&lt;endl; return 0;&#125;]]></content>
-      <tags>
-        <tag>背包</tag>
-        <tag>巧妙转化</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[题解 P3604 【美好的每一天】]]></title>
     <url>%2F2019%2F05%2F25%2F%E9%A2%98%E8%A7%A3%20P3604%20%E3%80%90%E7%BE%8E%E5%A5%BD%E7%9A%84%E6%AF%8F%E4%B8%80%E5%A4%A9%E3%80%91%2F</url>
     <content type="text"><![CDATA[$Description$一个区间如果满足区间内的值重排之后可以成为一个回文串，则这个区间可以回归天空 当前有$m$个区间，要求每个区间中有多少个子区间可以回归天空 $Solution$很容易想到是莫队题，但是对于维护区间贡献很难处理。 由于区间内的字符都是小写字母，考虑用$2$的幂次表示，如$’a’$表示为$2^0$,$’b’$表示为$2^1$,$’z’$表示为$2^{25}$(用$2$的幂次表示的原因下会讲) 然后考虑一个区间$[l,r]$对答案有贡献当且仅当$a_{r}~xor~a_{l-1}=2^x$或$0$，其中$a_{i}$为异或前缀和 开一个计数数组$c$,其中$c_{i}$表示当前区间中异或前缀和的值为$i$的点的个数，统计答案时若当前枚举到的点$j$的异或前缀和为$a_{j}$，枚举$2$的所有幂次和$0$,$ans$直接加上(或减去)$c[a_{j}]+\sum\limits_{i=0}^{25}c[2^i~xor~a_{j}]$ 至于为什么区间内字符用$2$的幂次表示,换用别的编号呢$?$ 如果不用$2$的幂次表示,换用别的编号，那么即使$xor$起来$=0$也不能说明区间内的数能排列成回文串,如一个区间内三个数的的编号分别为$1,4,5$,即使它们异或起来也是$0$，但是它们显然不能构成回文串。 $PS:$当前维护$[l,r]$的信息时，$ans$应加上$[l-1,r-1]$的信息(若是减去则维护$[l-1,r]$的信息)，并且桶维护$[l-1,r]$的信息,因为当前枚举到的点是$r$。 $Code$123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051#include &lt;bits/stdc++.h&gt;#define ll long long#define re register#define inf 0x3f3f3f3f#define N 60007using namespace std;struct node&#123; int l,r,num;&#125;q[N];inline int read()&#123; int x=0,w=0;char ch=getchar(); while (!isdigit(ch))w|=ch=='-',ch=getchar(); while (isdigit(ch))x=(x&lt;&lt;1)+(x&lt;&lt;3)+ch-'0',ch=getchar(); return w?-x:x;&#125;int ans,block,n,m,w[N],a[N],Ans[N];unsigned short c[1&lt;&lt;26];char s[N];inline bool cmp(node a,node b)&#123; return (a.l/block)^(b.l/block)?a.l&lt;b.l:(((a.l/block)&amp;1)?a.r&lt;b.r:a.r&gt;b.r);&#125;inline void add(int k)&#123; for (int i=0;i&lt;26;++i) ans+=c[k^(1&lt;&lt;i)]; ans+=c[k]; ++c[k];&#125;inline void del(int k)&#123; for (int i=0;i&lt;26;++i) ans-=c[k^(1&lt;&lt;i)]; --c[k]; ans-=c[k];&#125;signed main()&#123; n=read(),m=read();block=(m&amp;&amp;n/sqrt(m*2/3))?n/sqrt(m*2/3):sqrt(n); scanf("%s",s+1); for (int i=1;i&lt;=n;++i)w[i]=(1&lt;&lt;(s[i]-'a')),a[i]=a[i-1]^w[i]; for (int i=1;i&lt;=m;++i)q[i].l=read()-1,q[i].r=read(),q[i].num=i; sort(q+1,q+1+m,cmp); int l=1,r=0; for (int i=1;i&lt;=m;++i)&#123; int ql=q[i].l,qr=q[i].r; while (l&gt;ql)add(a[--l]); while (r&lt;qr)add(a[++r]); while (l&lt;ql)del(a[l++]); while (r&gt;qr)del(a[r--]); Ans[q[i].num]=ans; &#125; for (int i=1;i&lt;=m;++i)printf("%d\n",Ans[i]); return 0;&#125;]]></content>
       <tags>
         <tag>莫队</tag>
         <tag>异或</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[题解 CF366C 【Dima and Salad】]]></title>
+    <url>%2F2019%2F05%2F25%2F%E9%A2%98%E8%A7%A3%20CF366C%20%E3%80%90Dima%20and%20Salad%E3%80%91%2F</url>
+    <content type="text"><![CDATA[$Description$有$n$个水果,每个水果有两个属性：美味值和卡路里值。现在选用若干个（至少$1$个）水果制作一份特殊的沙拉，沙拉的美味值为所选的水果的美味值的和，沙拉的卡路里值为所选水果的卡路里值的和。要保证沙拉的美味值恰好是卡路里值的$K$倍。请计算该沙拉美味值最大为多少。 $Solution$根据题意可得$\sum a_{i}-k\times\sum b_{i}=0$ 所以我们考虑将$a_{i}$作为价值，$a_{i}-k\times b_{i}$作为重量，进行背包转移即可，由于重量有可能是负数，所以应用$map$存储转移数组或是将下标强行加上一个大数。 $Code$123456789101112131415161718192021222324#include &lt;bits/stdc++.h&gt;#define ll long long#define re register#define inf 0x3f3f3f3f#define N 30007using namespace std;inline int read()&#123; int x=0,w=0;char ch=getchar(); while (!isdigit(ch))w|=ch=='-',ch=getchar(); while (isdigit(ch))x=(x&lt;&lt;1)+(x&lt;&lt;3)+ch-'0',ch=getchar(); return w?-x:x;&#125;int a[N],v[N],f[200][N],g[200][N];signed main()&#123; int n=read(),k=read(),m=100*n;memset(f,-0x7f,sizeof(f));memset(g,-0x7f,sizeof(g)); for (int i=1;i&lt;=n;++i)a[i]=read(); for (int i=1;i&lt;=n;++i)v[i]=a[i]-read()*k; f[0][m]=0; for (int i=1;i&lt;=n;++i) for (int j=0;j&lt;=2*m;++j) f[i][j]=max(f[i-1][j],f[i-1][j-v[i]]+a[i]); cout&lt;&lt;(f[n][m]!=0?f[n][m]:-1)&lt;&lt;endl; return 0;&#125;]]></content>
+      <tags>
+        <tag>背包</tag>
+        <tag>巧妙转化</tag>
       </tags>
   </entry>
   <entry>

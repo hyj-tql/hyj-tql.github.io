@@ -105,7 +105,7 @@
 <meta property="og:description" content="$Description$$Ahri$得到了一个$(h+1) × (w+1)$的巧克力，这意味着她横着最多可以切$h$刀，竖着最多可以切$w$刀。 她想总共切$K$刀，每刀要么竖着切要么横着切，如果竖着切了$i$刀，横着切了$j$刀，会得到$(i+1) × (j+1)$个巧克力，定义一个切$K$刀的方案的代价是每一刀切完后巧克力个数之和，假设每刀切的位置是随机选择的（即剩余能切的位置等概率随机选一">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.loli.net/2019/04/23/5cbe6b2e5e418.png">
-<meta property="og:updated_time" content="2019-05-01T05:23:37.487Z">
+<meta property="og:updated_time" content="2022-11-17T15:49:53.281Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 4.21模拟赛T4">
 <meta name="twitter:description" content="$Description$$Ahri$得到了一个$(h+1) × (w+1)$的巧克力，这意味着她横着最多可以切$h$刀，竖着最多可以切$w$刀。 她想总共切$K$刀，每刀要么竖着切要么横着切，如果竖着切了$i$刀，横着切了$j$刀，会得到$(i+1) × (j+1)$个巧克力，定义一个切$K$刀的方案的代价是每一刀切完后巧克力个数之和，假设每刀切的位置是随机选择的（即剩余能切的位置等概率随机选一">
@@ -414,7 +414,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-01 13:23:37" itemprop="dateModified" datetime="2019-05-01T13:23:37+08:00">2019-05-01</time>
+                <time title="修改时间：2022-11-17 23:49:53" itemprop="dateModified" datetime="2022-11-17T23:49:53+08:00">2022-11-17</time>
               
             
           </span>
@@ -449,6 +449,7 @@
       
         <h2 id="Description"><a href="#Description" class="headerlink" title="$Description$"></a>$Description$</h2><p>$Ahri$得到了一个$(h+1) × (w+1)$的巧克力，这意味着她横着最多可以切$h$刀，竖着最多可以切$w$刀。</p>
 <p>她想总共切$K$刀，每刀要么竖着切要么横着切，如果竖着切了$i$刀，横着切了$j$刀，会得到$(i+1) × (j+1)$个巧克力，定义一个切$K$刀的方案的代价是每一刀切完后巧克力个数之和，假设每刀切的位置是随机选择的（即剩余能切的位置等概率随机选一个），请你求出期望代价，对$1e9+7$取模</p>
+<a id="more"></a>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="$Solution:$"></a>$Solution:$</h2><h3 id="做法一"><a href="#做法一" class="headerlink" title="做法一:"></a>做法一:</h3><p>参考<a href="https://xuxuxuxuxuxjh.github.io/2019/04/20/%E5%88%87%E8%9B%8B%E7%B3%95/" target="_blank" rel="noopener">xjh大佬的博客</a></p>
 <p>我们把答案的每一部分分开来考虑</p>
 <p>每一部分对答案的贡献就是这一部分能算进答案里的方案数$×$这部分的价值</p>

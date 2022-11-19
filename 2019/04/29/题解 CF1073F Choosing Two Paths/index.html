@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="题目大意：有一棵树，从中选取$2$条链，其中任何一条链的端点不能被另一条链包含，求这两条链，使这两条链的公共的点的部分最长，若相同，使得总长度最长。 因为其中任何一条链的端点不能被另一条链包含，所以重合线段的两个端点的度一定$\geqslant3($两条链的端点在这个节点处分开),在一棵树上要求公共部分最长，有点像求树的直径的做法，两遍$dfs$，特殊的是在更新答案时只有这个点度$\geqslan">
+  <meta name="description" content="题目大意：有一棵树，从中选取$2$条链，其中任何一条链的端点不能被另一条链包含，求这两条链，使这两条链的公共的点的部分最长，若相同，使得总长度最长。">
 <meta name="keywords" content="树相关">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 CF1073F Choosing Two Paths">
 <meta property="og:url" content="http://yoursite.com/2019/04/29/题解 CF1073F Choosing Two Paths/index.html">
 <meta property="og:site_name" content="heyuanjie的blog">
-<meta property="og:description" content="题目大意：有一棵树，从中选取$2$条链，其中任何一条链的端点不能被另一条链包含，求这两条链，使这两条链的公共的点的部分最长，若相同，使得总长度最长。 因为其中任何一条链的端点不能被另一条链包含，所以重合线段的两个端点的度一定$\geqslant3($两条链的端点在这个节点处分开),在一棵树上要求公共部分最长，有点像求树的直径的做法，两遍$dfs$，特殊的是在更新答案时只有这个点度$\geqslan">
+<meta property="og:description" content="题目大意：有一棵树，从中选取$2$条链，其中任何一条链的端点不能被另一条链包含，求这两条链，使这两条链的公共的点的部分最长，若相同，使得总长度最长。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-01T05:47:51.656Z">
+<meta property="og:updated_time" content="2022-11-18T03:05:04.487Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 CF1073F Choosing Two Paths">
-<meta name="twitter:description" content="题目大意：有一棵树，从中选取$2$条链，其中任何一条链的端点不能被另一条链包含，求这两条链，使这两条链的公共的点的部分最长，若相同，使得总长度最长。 因为其中任何一条链的端点不能被另一条链包含，所以重合线段的两个端点的度一定$\geqslant3($两条链的端点在这个节点处分开),在一棵树上要求公共部分最长，有点像求树的直径的做法，两遍$dfs$，特殊的是在更新答案时只有这个点度$\geqslan">
+<meta name="twitter:description" content="题目大意：有一棵树，从中选取$2$条链，其中任何一条链的端点不能被另一条链包含，求这两条链，使这两条链的公共的点的部分最长，若相同，使得总长度最长。">
 
 
 
@@ -412,7 +412,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-01 13:47:51" itemprop="dateModified" datetime="2019-05-01T13:47:51+08:00">2019-05-01</time>
+                <time title="修改时间：2022-11-18 11:05:04" itemprop="dateModified" datetime="2022-11-18T11:05:04+08:00">2022-11-18</time>
               
             
           </span>
@@ -446,6 +446,7 @@
 
       
         <p>题目大意：有一棵树，从中选取$2$条链，其中任何一条链的端点不能被另一条链包含，求这两条链，使这两条链的公共的点的部分最长，若相同，使得总长度最长。</p>
+<a id="more"></a>
 <p>因为其中任何一条链的端点不能被另一条链包含，所以重合线段的两个端点的度一定$\geqslant3($两条链的端点在这个节点处分开),在一棵树上要求公共部分最长，有点像求树的直径的做法，两遍$dfs$，特殊的是在更新答案时只有这个点度$\geqslant3$时才更新。</p>
 <p>这道题还有个要求，在求公共部分最长的情况下还要使总长度最长</p>
 <p>那我们就在$u$和$v$的子树中，找离根最远和次远的点即可。</p>

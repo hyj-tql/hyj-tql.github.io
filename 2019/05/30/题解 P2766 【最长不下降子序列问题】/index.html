@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="$Description$给定正整数序列$a_1,a_2,\cdots ,a_n$。 $1.$计算其最长不下降子序列的长度$s$。 $2.$计算从给定的序列中最多可取出多少个长度为$s$的不下降子序列。 $3.$如果允许在取出的序列中多次使用$x_1$和$x_n$，则从给定序列中最多可取出多少个长度为$s$的不下降子序列。 $Solution$首先动态规划求出$f_{i}$，表示以第$i$位为开头">
-<meta name="keywords" content="网络流,网络流$24$题,拆点">
+  <meta name="description" content="$Description$给定正整数序列$a_1,a_2,\cdots ,a_n$。 $1.$计算其最长不下降子序列的长度$s$。 $2.$计算从给定的序列中最多可取出多少个长度为$s$的不下降子序列。 $3.$如果允许在取出的序列中多次使用$x_1$和$x_n$，则从给定序列中最多可取出多少个长度为$s$的不下降子序列。">
+<meta name="keywords" content="网络流,拆点,网络流$24$题">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 P2766 【最长不下降子序列问题】">
 <meta property="og:url" content="http://yoursite.com/2019/05/30/题解 P2766 【最长不下降子序列问题】/index.html">
 <meta property="og:site_name" content="heyuanjie的blog">
-<meta property="og:description" content="$Description$给定正整数序列$a_1,a_2,\cdots ,a_n$。 $1.$计算其最长不下降子序列的长度$s$。 $2.$计算从给定的序列中最多可取出多少个长度为$s$的不下降子序列。 $3.$如果允许在取出的序列中多次使用$x_1$和$x_n$，则从给定序列中最多可取出多少个长度为$s$的不下降子序列。 $Solution$首先动态规划求出$f_{i}$，表示以第$i$位为开头">
+<meta property="og:description" content="$Description$给定正整数序列$a_1,a_2,\cdots ,a_n$。 $1.$计算其最长不下降子序列的长度$s$。 $2.$计算从给定的序列中最多可取出多少个长度为$s$的不下降子序列。 $3.$如果允许在取出的序列中多次使用$x_1$和$x_n$，则从给定序列中最多可取出多少个长度为$s$的不下降子序列。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-30T15:20:20.669Z">
+<meta property="og:updated_time" content="2022-11-19T16:54:19.582Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 P2766 【最长不下降子序列问题】">
-<meta name="twitter:description" content="$Description$给定正整数序列$a_1,a_2,\cdots ,a_n$。 $1.$计算其最长不下降子序列的长度$s$。 $2.$计算从给定的序列中最多可取出多少个长度为$s$的不下降子序列。 $3.$如果允许在取出的序列中多次使用$x_1$和$x_n$，则从给定序列中最多可取出多少个长度为$s$的不下降子序列。 $Solution$首先动态规划求出$f_{i}$，表示以第$i$位为开头">
+<meta name="twitter:description" content="$Description$给定正整数序列$a_1,a_2,\cdots ,a_n$。 $1.$计算其最长不下降子序列的长度$s$。 $2.$计算从给定的序列中最多可取出多少个长度为$s$的不下降子序列。 $3.$如果允许在取出的序列中多次使用$x_1$和$x_n$，则从给定序列中最多可取出多少个长度为$s$的不下降子序列。">
 
 
 
@@ -395,12 +395,24 @@
                 
               
 
-              <time title="创建时间：2019-05-30 21:53:48 / 修改时间：23:20:20" itemprop="dateCreated datePublished" datetime="2019-05-30T21:53:48+08:00">2019-05-30</time>
+              <time title="创建时间：2019-05-30 21:53:48" itemprop="dateCreated datePublished" datetime="2019-05-30T21:53:48+08:00">2019-05-30</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2022-11-20 00:54:19" itemprop="dateModified" datetime="2022-11-20T00:54:19+08:00">2022-11-20</time>
               
             
           </span>
@@ -437,6 +449,7 @@
 <p>$1.$计算其最长不下降子序列的长度$s$。</p>
 <p>$2.$计算从给定的序列中最多可取出多少个长度为$s$的不下降子序列。</p>
 <p>$3.$如果允许在取出的序列中多次使用$x_1$和$x_n$，则从给定序列中最多可取出多少个长度为$s$的不下降子序列。</p>
+<a id="more"></a>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>首先动态规划求出$f_{i}$，表示以第$i$位为开头的最长不下降子序列的长度，求出最长不下降子序列长度$W$。</p>
 <p>把序列每位$i$拆成两个点$i_1$和$i_2$，从$i_1~$到$i_2~$连接一条容量为$1$的边。</p>
 <p>如果序列第$i$位有$f_{i}=W$，从$s$到$i_{1}~$连接一条容量为$1$的有向边。</p>
@@ -469,9 +482,9 @@
           
             <a href="/tags/网络流/" rel="tag"># 网络流</a>
           
-            <a href="/tags/网络流-24-题/" rel="tag"># 网络流$24$题</a>
-          
             <a href="/tags/拆点/" rel="tag"># 拆点</a>
+          
+            <a href="/tags/网络流-24-题/" rel="tag"># 网络流$24$题</a>
           
         </div>
       

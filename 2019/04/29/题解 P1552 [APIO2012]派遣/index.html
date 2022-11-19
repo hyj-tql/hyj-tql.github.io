@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="题意：$n$个点组成一棵树，每个点都有一个领导力和费用，可以让一个点当领导，然后在这个点的子树中选择一些费用之和不超过$m$的点，得到领导的领导力乘选择的点的个数（领导可不被选择）的利润。求利润最大值。 $n\leqslant100000$； 每个点构造一个大根堆，堆里的就是这个点的人。 往父亲那里合并堆，记录堆的大小，费用的总和。 从儿子合并完毕后，在每个节点，不断踢出费用最大的人，直到费用的总">
+  <meta name="description" content="题意：$n$个点组成一棵树，每个点都有一个领导力和费用，可以让一个点当领导，然后在这个点的子树中选择一些费用之和不超过$m$的点，得到领导的领导力乘选择的点的个数（领导可不被选择）的利润。求利润最大值。 $n\leqslant100000$；">
 <meta name="keywords" content="左偏树">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 P1552 [APIO2012]派遣">
 <meta property="og:url" content="http://yoursite.com/2019/04/29/题解 P1552 [APIO2012]派遣/index.html">
 <meta property="og:site_name" content="heyuanjie的blog">
-<meta property="og:description" content="题意：$n$个点组成一棵树，每个点都有一个领导力和费用，可以让一个点当领导，然后在这个点的子树中选择一些费用之和不超过$m$的点，得到领导的领导力乘选择的点的个数（领导可不被选择）的利润。求利润最大值。 $n\leqslant100000$； 每个点构造一个大根堆，堆里的就是这个点的人。 往父亲那里合并堆，记录堆的大小，费用的总和。 从儿子合并完毕后，在每个节点，不断踢出费用最大的人，直到费用的总">
+<meta property="og:description" content="题意：$n$个点组成一棵树，每个点都有一个领导力和费用，可以让一个点当领导，然后在这个点的子树中选择一些费用之和不超过$m$的点，得到领导的领导力乘选择的点的个数（领导可不被选择）的利润。求利润最大值。 $n\leqslant100000$；">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-01T05:51:54.283Z">
+<meta property="og:updated_time" content="2022-11-18T05:50:57.279Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 P1552 [APIO2012]派遣">
-<meta name="twitter:description" content="题意：$n$个点组成一棵树，每个点都有一个领导力和费用，可以让一个点当领导，然后在这个点的子树中选择一些费用之和不超过$m$的点，得到领导的领导力乘选择的点的个数（领导可不被选择）的利润。求利润最大值。 $n\leqslant100000$； 每个点构造一个大根堆，堆里的就是这个点的人。 往父亲那里合并堆，记录堆的大小，费用的总和。 从儿子合并完毕后，在每个节点，不断踢出费用最大的人，直到费用的总">
+<meta name="twitter:description" content="题意：$n$个点组成一棵树，每个点都有一个领导力和费用，可以让一个点当领导，然后在这个点的子树中选择一些费用之和不超过$m$的点，得到领导的领导力乘选择的点的个数（领导可不被选择）的利润。求利润最大值。 $n\leqslant100000$；">
 
 
 
@@ -412,7 +412,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-01 13:51:54" itemprop="dateModified" datetime="2019-05-01T13:51:54+08:00">2019-05-01</time>
+                <time title="修改时间：2022-11-18 13:50:57" itemprop="dateModified" datetime="2022-11-18T13:50:57+08:00">2022-11-18</time>
               
             
           </span>
@@ -446,6 +446,7 @@
 
       
         <p>题意：$n$个点组成一棵树，每个点都有一个领导力和费用，可以让一个点当领导，然后在这个点的子树中选择一些费用之和不超过$m$的点，得到领导的领导力乘选择的点的个数（领导可不被选择）的利润。求利润最大值。 $n\leqslant100000$；</p>
+<a id="more"></a>
 <p>每个点构造一个大根堆，堆里的就是这个点的人。</p>
 <p>往父亲那里合并堆，记录堆的大小，费用的总和。</p>
 <p>从儿子合并完毕后，在每个节点，不断踢出费用最大的人，直到费用的总和$\leqslant m$这就是这个点的最优方案了。（显然，花费最小的都留下了）</p>

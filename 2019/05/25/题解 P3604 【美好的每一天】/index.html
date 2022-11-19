@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="$Description$一个区间如果满足区间内的值重排之后可以成为一个回文串，则这个区间可以回归天空 当前有$m$个区间，要求每个区间中有多少个子区间可以回归天空 $Solution$很容易想到是莫队题，但是对于维护区间贡献很难处理。 由于区间内的字符都是小写字母，考虑用$2$的幂次表示，如$’a’$表示为$2^0$,$’b’$表示为$2^1$,$’z’$表示为$2^{25}$(用$2$的幂次表">
+  <meta name="description" content="$Description$一个区间如果满足区间内的值重排之后可以成为一个回文串，则这个区间可以回归天空 当前有$m$个区间，要求每个区间中有多少个子区间可以回归天空">
 <meta name="keywords" content="莫队,异或">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 P3604 【美好的每一天】">
 <meta property="og:url" content="http://yoursite.com/2019/05/25/题解 P3604 【美好的每一天】/index.html">
 <meta property="og:site_name" content="heyuanjie的blog">
-<meta property="og:description" content="$Description$一个区间如果满足区间内的值重排之后可以成为一个回文串，则这个区间可以回归天空 当前有$m$个区间，要求每个区间中有多少个子区间可以回归天空 $Solution$很容易想到是莫队题，但是对于维护区间贡献很难处理。 由于区间内的字符都是小写字母，考虑用$2$的幂次表示，如$’a’$表示为$2^0$,$’b’$表示为$2^1$,$’z’$表示为$2^{25}$(用$2$的幂次表">
+<meta property="og:description" content="$Description$一个区间如果满足区间内的值重排之后可以成为一个回文串，则这个区间可以回归天空 当前有$m$个区间，要求每个区间中有多少个子区间可以回归天空">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-25T15:44:31.697Z">
+<meta property="og:updated_time" content="2022-11-19T16:50:48.030Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 P3604 【美好的每一天】">
-<meta name="twitter:description" content="$Description$一个区间如果满足区间内的值重排之后可以成为一个回文串，则这个区间可以回归天空 当前有$m$个区间，要求每个区间中有多少个子区间可以回归天空 $Solution$很容易想到是莫队题，但是对于维护区间贡献很难处理。 由于区间内的字符都是小写字母，考虑用$2$的幂次表示，如$’a’$表示为$2^0$,$’b’$表示为$2^1$,$’z’$表示为$2^{25}$(用$2$的幂次表">
+<meta name="twitter:description" content="$Description$一个区间如果满足区间内的值重排之后可以成为一个回文串，则这个区间可以回归天空 当前有$m$个区间，要求每个区间中有多少个子区间可以回归天空">
 
 
 
@@ -395,12 +395,24 @@
                 
               
 
-              <time title="创建时间：2019-05-25 21:47:07 / 修改时间：23:44:31" itemprop="dateCreated datePublished" datetime="2019-05-25T21:47:07+08:00">2019-05-25</time>
+              <time title="创建时间：2019-05-25 21:47:07" itemprop="dateCreated datePublished" datetime="2019-05-25T21:47:07+08:00">2019-05-25</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2022-11-20 00:50:48" itemprop="dateModified" datetime="2022-11-20T00:50:48+08:00">2022-11-20</time>
               
             
           </span>
@@ -435,6 +447,7 @@
       
         <h2 id="Description"><a href="#Description" class="headerlink" title="$Description$"></a>$Description$</h2><p>一个区间如果满足区间内的值重排之后可以成为一个回文串，则这个区间可以回归天空</p>
 <p>当前有$m$个区间，要求每个区间中有多少个子区间可以回归天空</p>
+<a id="more"></a>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>很容易想到是莫队题，但是对于维护区间贡献很难处理。</p>
 <p>由于区间内的字符都是小写字母，考虑用$2$的幂次表示，如$’a’$表示为$2^0$,$’b’$表示为$2^1$,$’z’$表示为$2^{25}$(用$2$的幂次表示的原因下会讲)</p>
 <p>然后考虑一个区间$[l,r]$对答案有贡献当且仅当$a_{r}~xor~a_{l-1}=2^x$或$0$，其中$a_{i}$为异或前缀和</p>

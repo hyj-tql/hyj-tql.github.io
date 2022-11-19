@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="题意：给出$n$个回文串$s_1, s_2, \cdots,s_n$求如下二元组$(i, j)$的个数$s_i + s_j$仍然是回文串 对于每个字符串进行$hash$,判断连接形成回文串只需判断$a+b$是否$=$$b+a$即可 注:这里的$x+y$指的是将字符串$y$连到字符串$x$后面去。 123456789101112131415161718192021222324252627282930">
+  <meta name="description" content="题意：给出$n$个回文串$s_1, s_2, \cdots,s_n$求如下二元组$(i, j)$的个数$s_i + s_j$仍然是回文串">
 <meta name="keywords" content="$hash$">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 P3449 【[POI2006]PAL-Palindromes】">
 <meta property="og:url" content="http://yoursite.com/2019/05/12/题解 P3449 【[POI2006]PAL-Palindromes】/index.html">
 <meta property="og:site_name" content="heyuanjie的blog">
-<meta property="og:description" content="题意：给出$n$个回文串$s_1, s_2, \cdots,s_n$求如下二元组$(i, j)$的个数$s_i + s_j$仍然是回文串 对于每个字符串进行$hash$,判断连接形成回文串只需判断$a+b$是否$=$$b+a$即可 注:这里的$x+y$指的是将字符串$y$连到字符串$x$后面去。 123456789101112131415161718192021222324252627282930">
+<meta property="og:description" content="题意：给出$n$个回文串$s_1, s_2, \cdots,s_n$求如下二元组$(i, j)$的个数$s_i + s_j$仍然是回文串">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-12T15:47:34.605Z">
+<meta property="og:updated_time" content="2022-11-19T16:43:45.091Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 P3449 【[POI2006]PAL-Palindromes】">
-<meta name="twitter:description" content="题意：给出$n$个回文串$s_1, s_2, \cdots,s_n$求如下二元组$(i, j)$的个数$s_i + s_j$仍然是回文串 对于每个字符串进行$hash$,判断连接形成回文串只需判断$a+b$是否$=$$b+a$即可 注:这里的$x+y$指的是将字符串$y$连到字符串$x$后面去。 123456789101112131415161718192021222324252627282930">
+<meta name="twitter:description" content="题意：给出$n$个回文串$s_1, s_2, \cdots,s_n$求如下二元组$(i, j)$的个数$s_i + s_j$仍然是回文串">
 
 
 
@@ -395,12 +395,24 @@
                 
               
 
-              <time title="创建时间：2019-05-12 23:47:24 / 修改时间：23:47:34" itemprop="dateCreated datePublished" datetime="2019-05-12T23:47:24+08:00">2019-05-12</time>
+              <time title="创建时间：2019-05-12 23:47:24" itemprop="dateCreated datePublished" datetime="2019-05-12T23:47:24+08:00">2019-05-12</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2022-11-20 00:43:45" itemprop="dateModified" datetime="2022-11-20T00:43:45+08:00">2022-11-20</time>
               
             
           </span>
@@ -434,6 +446,7 @@
 
       
         <p>题意：给出$n$个回文串$s_1, s_2, \cdots,s_n$求如下二元组$(i, j)$的个数$s_i + s_j$仍然是回文串</p>
+<a id="more"></a>
 <p>对于每个字符串进行$hash$,判断连接形成回文串只需判断$a+b$是否$=$$b+a$即可</p>
 <p>注:这里的$x+y$指的是将字符串$y$连到字符串$x$后面去。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> inf 0x3f3f3f3f</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 2000002</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> hash HASH</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mod 1000000007</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> base 131</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n,m,hash[N],len[N],ch[N][<span class="number">26</span>],tot,po[N],w[N],ans;</span><br><span class="line"><span class="built_in">string</span> s[N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">calc</span><span class="params">(<span class="built_in">string</span> s)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> res=<span class="number">0</span>,len=s.length();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len;++i)res=(res*base+s[i]-<span class="string">'a'</span>)%mod;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x=<span class="number">0</span>,w=<span class="number">0</span>;<span class="keyword">char</span> ch=getchar();</span><br><span class="line">    <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch))w|=ch==<span class="string">'-'</span>,ch=getchar();</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch))x=(x&lt;&lt;<span class="number">1</span>)+(x&lt;&lt;<span class="number">3</span>)+ch-<span class="string">'0'</span>,ch=getchar();</span><br><span class="line">    <span class="keyword">return</span> w?-x:x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="built_in">string</span> s,<span class="keyword">int</span> id)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> len=s.length(),now=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len;++i)&#123;</span><br><span class="line">        <span class="keyword">int</span> v=s[i]-<span class="string">'a'</span>;</span><br><span class="line">        <span class="keyword">if</span> (!ch[now][v])ch[now][v]=++tot;</span><br><span class="line">        now=ch[now][v];</span><br><span class="line">    &#125;</span><br><span class="line">    w[now]=id;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">query</span><span class="params">(<span class="built_in">string</span> ss,<span class="keyword">int</span> id)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> le=ss.length(),now=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;le;++i)&#123;</span><br><span class="line">        <span class="keyword">int</span> v=ss[i]-<span class="string">'a'</span>;</span><br><span class="line">        now=ch[now][v];</span><br><span class="line">        <span class="keyword">if</span> (w[now]&amp;&amp;w[now]!=id)&#123;</span><br><span class="line">            <span class="keyword">if</span> ((hash[w[now]]*po[len[id]]%mod+hash[id])%mod==(hash[id]*po[len[w[now]]]%mod+hash[w[now]])%mod)&#123;</span><br><span class="line">                ++ans;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    n=read();po[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">200000</span>;++i)po[i]=po[i<span class="number">-1</span>]*base%mod;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)&#123;</span><br><span class="line">        len[i]=read();<span class="built_in">cin</span>&gt;&gt;s[i];</span><br><span class="line">        build(s[i],i);</span><br><span class="line">        hash[i]=calc(s[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">        query(s[i],i);</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;ans*<span class="number">2</span>+n;    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>

@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="$Description$求两条途径点数尽可能多的从$1$到$n$的不相交路线（$1,n$除外） $Solution$对于每个点$a~$拆成$a_1~$和$a_2$两个点，两个点之间的容量为$1$，边权为$1$，（因为每个点只能选一次，每选一个点可以对答案造成$1$的贡献） （若$a$为$1$或$n$容量应为$2$，因为这两个点可以选$2$次） 对于每条从$u$到$v$的边，从$u_2$向$v_1">
+  <meta name="description" content="$Description$求两条途径点数尽可能多的从$1$到$n$的不相交路线（$1,n$除外）">
 <meta name="keywords" content="费用流,网络流$24$题">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 P2770 【航空路线问题】">
 <meta property="og:url" content="http://yoursite.com/2019/05/31/题解 P2770 【航空路线问题】/index.html">
 <meta property="og:site_name" content="heyuanjie的blog">
-<meta property="og:description" content="$Description$求两条途径点数尽可能多的从$1$到$n$的不相交路线（$1,n$除外） $Solution$对于每个点$a~$拆成$a_1~$和$a_2$两个点，两个点之间的容量为$1$，边权为$1$，（因为每个点只能选一次，每选一个点可以对答案造成$1$的贡献） （若$a$为$1$或$n$容量应为$2$，因为这两个点可以选$2$次） 对于每条从$u$到$v$的边，从$u_2$向$v_1">
+<meta property="og:description" content="$Description$求两条途径点数尽可能多的从$1$到$n$的不相交路线（$1,n$除外）">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-31T13:44:43.403Z">
+<meta property="og:updated_time" content="2022-11-19T16:54:54.483Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 P2770 【航空路线问题】">
-<meta name="twitter:description" content="$Description$求两条途径点数尽可能多的从$1$到$n$的不相交路线（$1,n$除外） $Solution$对于每个点$a~$拆成$a_1~$和$a_2$两个点，两个点之间的容量为$1$，边权为$1$，（因为每个点只能选一次，每选一个点可以对答案造成$1$的贡献） （若$a$为$1$或$n$容量应为$2$，因为这两个点可以选$2$次） 对于每条从$u$到$v$的边，从$u_2$向$v_1">
+<meta name="twitter:description" content="$Description$求两条途径点数尽可能多的从$1$到$n$的不相交路线（$1,n$除外）">
 
 
 
@@ -395,12 +395,24 @@
                 
               
 
-              <time title="创建时间：2019-05-31 21:44:28 / 修改时间：21:44:43" itemprop="dateCreated datePublished" datetime="2019-05-31T21:44:28+08:00">2019-05-31</time>
+              <time title="创建时间：2019-05-31 21:44:28" itemprop="dateCreated datePublished" datetime="2019-05-31T21:44:28+08:00">2019-05-31</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2022-11-20 00:54:54" itemprop="dateModified" datetime="2022-11-20T00:54:54+08:00">2022-11-20</time>
               
             
           </span>
@@ -434,6 +446,7 @@
 
       
         <h2 id="Description"><a href="#Description" class="headerlink" title="$Description$"></a>$Description$</h2><p>求两条途径点数尽可能多的从$1$到$n$的不相交路线（$1,n$除外）</p>
+<a id="more"></a>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>对于每个点$a~$拆成$a_1~$和$a_2$两个点，两个点之间的容量为$1$，边权为$1$，（因为每个点只能选一次，每选一个点可以对答案造成$1$的贡献） （若$a$为$1$或$n$容量应为$2$，因为这两个点可以选$2$次）</p>
 <p>对于每条从$u$到$v$的边，从$u_2$向$v_1$建一条容量为$1$，边权为$0$的边（因为每条边只能选一次，选边并不会对答案造成影响）</p>
 <p>最后从源点$s$向$a_1$建一条容量为$2$，边权为$0$,的边</p>

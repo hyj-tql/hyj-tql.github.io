@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="题意：有$N$个点，$M$条双向边，$K$个被侵略城市，与这$K$个被侵略城市距离$\leqslant$$S$的城市就是危险城市。其他就是安全城市。安全城市的点权就是$P$，危险城市的点权就是$Q$,问才$1$号点到$N$号点的最小花费。 标记危险城市显然需要跑最短路，但是对于$K$个点跑$K$次最短路时间复杂度太高，于是我们建立虚点连接$K$个点，边权为$0$,原先道路边权为$1$,跑最短路即可">
+  <meta name="description" content="题意：有$N$个点，$M$条双向边，$K$个被侵略城市，与这$K$个被侵略城市距离$\leqslant$$S$的城市就是危险城市。其他就是安全城市。安全城市的点权就是$P$，危险城市的点权就是$Q$,问才$1$号点到$N$号点的最小花费。">
 <meta name="keywords" content="最短路">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 P3393 【逃离僵尸岛】">
 <meta property="og:url" content="http://yoursite.com/2019/04/30/题解 P3393 【逃离僵尸岛】/index.html">
 <meta property="og:site_name" content="heyuanjie的blog">
-<meta property="og:description" content="题意：有$N$个点，$M$条双向边，$K$个被侵略城市，与这$K$个被侵略城市距离$\leqslant$$S$的城市就是危险城市。其他就是安全城市。安全城市的点权就是$P$，危险城市的点权就是$Q$,问才$1$号点到$N$号点的最小花费。 标记危险城市显然需要跑最短路，但是对于$K$个点跑$K$次最短路时间复杂度太高，于是我们建立虚点连接$K$个点，边权为$0$,原先道路边权为$1$,跑最短路即可">
+<meta property="og:description" content="题意：有$N$个点，$M$条双向边，$K$个被侵略城市，与这$K$个被侵略城市距离$\leqslant$$S$的城市就是危险城市。其他就是安全城市。安全城市的点权就是$P$，危险城市的点权就是$Q$,问才$1$号点到$N$号点的最小花费。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-01T05:27:38.899Z">
+<meta property="og:updated_time" content="2022-11-17T15:58:58.811Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 P3393 【逃离僵尸岛】">
-<meta name="twitter:description" content="题意：有$N$个点，$M$条双向边，$K$个被侵略城市，与这$K$个被侵略城市距离$\leqslant$$S$的城市就是危险城市。其他就是安全城市。安全城市的点权就是$P$，危险城市的点权就是$Q$,问才$1$号点到$N$号点的最小花费。 标记危险城市显然需要跑最短路，但是对于$K$个点跑$K$次最短路时间复杂度太高，于是我们建立虚点连接$K$个点，边权为$0$,原先道路边权为$1$,跑最短路即可">
+<meta name="twitter:description" content="题意：有$N$个点，$M$条双向边，$K$个被侵略城市，与这$K$个被侵略城市距离$\leqslant$$S$的城市就是危险城市。其他就是安全城市。安全城市的点权就是$P$，危险城市的点权就是$Q$,问才$1$号点到$N$号点的最小花费。">
 
 
 
@@ -412,7 +412,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-01 13:27:38" itemprop="dateModified" datetime="2019-05-01T13:27:38+08:00">2019-05-01</time>
+                <time title="修改时间：2022-11-17 23:58:58" itemprop="dateModified" datetime="2022-11-17T23:58:58+08:00">2022-11-17</time>
               
             
           </span>
@@ -446,6 +446,7 @@
 
       
         <p>题意：有$N$个点，$M$条双向边，$K$个被侵略城市，与这$K$个被侵略城市距离$\leqslant$$S$的城市就是危险城市。其他就是安全城市。安全城市的点权就是$P$，危险城市的点权就是$Q$,问才$1$号点到$N$号点的最小花费。</p>
+<a id="more"></a>
 <p>标记危险城市显然需要跑最短路，但是对于$K$个点跑$K$次最短路时间复杂度太高，于是我们建立虚点连接$K$个点，边权为$0$,原先道路边权为$1$,跑最短路即可，这样就可以找到所有危险城市了。</p>
 <p>对于点权最短路，我们只需要将到达点的权值设为边权即可，对于到达点是危险城市或是$1$或$N$特判。</p>
 <p>记得开$long long$</p>

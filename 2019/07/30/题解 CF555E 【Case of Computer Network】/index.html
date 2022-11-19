@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="$Description$给定一个$n$个点$,m$条边的无向图。有$q$条有向路线分别从$s_i$到达$t_i$。 现在你要给无向图的每条边分配一个方向。问是否存在一种分配答案使得每条路线的$s_i$和$t_i$都满足能够从$s_i$走到$~t_i$。 $Solution$很容易想到将这个无向图进行边双缩点 考虑边双性质:同一边双联通分量的任意两点至少存在两条不存在同一条边的路径。  所有每对于">
+  <meta name="description" content="$Description$给定一个$n$个点$,m$条边的无向图。有$q$条有向路线分别从$s_i$到达$t_i$。 现在你要给无向图的每条边分配一个方向。问是否存在一种分配答案使得每条路线的$s_i$和$t_i$都满足能够从$s_i$走到$~t_i$。">
 <meta name="keywords" content="并查集,$Tarjan$,边双联通分量,树上差分,$lca$">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 CF555E 【Case of Computer Network】">
 <meta property="og:url" content="http://yoursite.com/2019/07/30/题解 CF555E 【Case of Computer Network】/index.html">
 <meta property="og:site_name" content="heyuanjie的blog">
-<meta property="og:description" content="$Description$给定一个$n$个点$,m$条边的无向图。有$q$条有向路线分别从$s_i$到达$t_i$。 现在你要给无向图的每条边分配一个方向。问是否存在一种分配答案使得每条路线的$s_i$和$t_i$都满足能够从$s_i$走到$~t_i$。 $Solution$很容易想到将这个无向图进行边双缩点 考虑边双性质:同一边双联通分量的任意两点至少存在两条不存在同一条边的路径。  所有每对于">
+<meta property="og:description" content="$Description$给定一个$n$个点$,m$条边的无向图。有$q$条有向路线分别从$s_i$到达$t_i$。 现在你要给无向图的每条边分配一个方向。问是否存在一种分配答案使得每条路线的$s_i$和$t_i$都满足能够从$s_i$走到$~t_i$。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-31T07:42:17.632Z">
+<meta property="og:updated_time" content="2022-11-19T17:01:51.426Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 CF555E 【Case of Computer Network】">
-<meta name="twitter:description" content="$Description$给定一个$n$个点$,m$条边的无向图。有$q$条有向路线分别从$s_i$到达$t_i$。 现在你要给无向图的每条边分配一个方向。问是否存在一种分配答案使得每条路线的$s_i$和$t_i$都满足能够从$s_i$走到$~t_i$。 $Solution$很容易想到将这个无向图进行边双缩点 考虑边双性质:同一边双联通分量的任意两点至少存在两条不存在同一条边的路径。  所有每对于">
+<meta name="twitter:description" content="$Description$给定一个$n$个点$,m$条边的无向图。有$q$条有向路线分别从$s_i$到达$t_i$。 现在你要给无向图的每条边分配一个方向。问是否存在一种分配答案使得每条路线的$s_i$和$t_i$都满足能够从$s_i$走到$~t_i$。">
 
 
 
@@ -412,7 +412,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-31 15:42:17" itemprop="dateModified" datetime="2019-07-31T15:42:17+08:00">2019-07-31</time>
+                <time title="修改时间：2022-11-20 01:01:51" itemprop="dateModified" datetime="2022-11-20T01:01:51+08:00">2022-11-20</time>
               
             
           </span>
@@ -446,6 +446,7 @@
 
       
         <h2 id="Description"><a href="#Description" class="headerlink" title="$Description$"></a>$Description$</h2><p>给定一个$n$个点$,m$条边的无向图。有$q$条有向路线分别从$s_i$到达$t_i$。 现在你要给无向图的每条边分配一个方向。问是否存在一种分配答案使得每条路线的$s_i$和$t_i$都满足能够从$s_i$走到$~t_i$。</p>
+<a id="more"></a>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>很容易想到将这个无向图进行边双缩点</p>
 <p>考虑边双性质:同一边双联通分量的任意两点至少存在两条不存在同一条边的路径。 </p>
 <p>所有每对于一个边双，它内部的边一定可以通过分配方向来使得每对点之间都可以互相走到。</p>

@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="做法最小生成树很容易发现，但是难点在于想单独打井，设一个源点$0$，把每个井与$0$连边，费用就是打井所需费用 12345678910111213141516171819202122232425262728293031323334353637#include &amp;lt;bits/stdc++.h&amp;gt;using namespace std;struct node&amp;#123;    int u,v,">
+  <meta name="description" content="题意:$Farmer John $的农场缺水了。 他决定将水引入到他的 $n$ 个牧场。他准备通过挖若干井，并在各块田中修筑水道来连通各块田地以供水。在第 $i$ 号田中挖一口井需要花费 $W_i$ 元。连接 $i$ 号田与 $j$ 号田需要 $P_{i,j}$（$P_{j,i}=P_{i,j}$）元。 请求出 FJ 需要为使所有农场都与有水的农场相连或拥有水井所需要的最少钱数。 $1 \leqs">
 <meta name="keywords" content="最小生成树">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 P1550 [USACO08OCT]打井Watering Hole">
 <meta property="og:url" content="http://yoursite.com/2019/04/29/题解 P1550 [USACO08OCT]打井Watering Hole/index.html">
 <meta property="og:site_name" content="heyuanjie的blog">
-<meta property="og:description" content="做法最小生成树很容易发现，但是难点在于想单独打井，设一个源点$0$，把每个井与$0$连边，费用就是打井所需费用 12345678910111213141516171819202122232425262728293031323334353637#include &amp;lt;bits/stdc++.h&amp;gt;using namespace std;struct node&amp;#123;    int u,v,">
+<meta property="og:description" content="题意:$Farmer John $的农场缺水了。 他决定将水引入到他的 $n$ 个牧场。他准备通过挖若干井，并在各块田中修筑水道来连通各块田地以供水。在第 $i$ 号田中挖一口井需要花费 $W_i$ 元。连接 $i$ 号田与 $j$ 号田需要 $P_{i,j}$（$P_{j,i}=P_{i,j}$）元。 请求出 FJ 需要为使所有农场都与有水的农场相连或拥有水井所需要的最少钱数。 $1 \leqs">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-01T05:51:33.250Z">
+<meta property="og:updated_time" content="2022-11-18T03:19:13.920Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 P1550 [USACO08OCT]打井Watering Hole">
-<meta name="twitter:description" content="做法最小生成树很容易发现，但是难点在于想单独打井，设一个源点$0$，把每个井与$0$连边，费用就是打井所需费用 12345678910111213141516171819202122232425262728293031323334353637#include &amp;lt;bits/stdc++.h&amp;gt;using namespace std;struct node&amp;#123;    int u,v,">
+<meta name="twitter:description" content="题意:$Farmer John $的农场缺水了。 他决定将水引入到他的 $n$ 个牧场。他准备通过挖若干井，并在各块田中修筑水道来连通各块田地以供水。在第 $i$ 号田中挖一口井需要花费 $W_i$ 元。连接 $i$ 号田与 $j$ 号田需要 $P_{i,j}$（$P_{j,i}=P_{i,j}$）元。 请求出 FJ 需要为使所有农场都与有水的农场相连或拥有水井所需要的最少钱数。 $1 \leqs">
 
 
 
@@ -412,7 +412,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-01 13:51:33" itemprop="dateModified" datetime="2019-05-01T13:51:33+08:00">2019-05-01</time>
+                <time title="修改时间：2022-11-18 11:19:13" itemprop="dateModified" datetime="2022-11-18T11:19:13+08:00">2022-11-18</time>
               
             
           </span>
@@ -445,7 +445,12 @@
       
 
       
-        <p>做法最小生成树很容易发现，但是难点在于想单独打井，设一个源点$0$，把每个井与$0$连边，费用就是打井所需费用</p>
+        <p>题意:$Farmer John $的农场缺水了。</p>
+<p>他决定将水引入到他的 $n$ 个牧场。他准备通过挖若干井，并在各块田中修筑水道来连通各块田地以供水。在第 $i$ 号田中挖一口井需要花费 $W_i$ 元。连接 $i$ 号田与 $j$ 号田需要 $P_{i,j}$（$P_{j,i}=P_{i,j}$）元。</p>
+<p>请求出 FJ 需要为使所有农场都与有水的农场相连或拥有水井所需要的最少钱数。</p>
+<p>$1 \leqslant n \leqslant 300$，$1 \leqslant W_i \leqslant 10^5$，$1 \leqslant P_{i,j} \leqslant 10^5$。</p>
+<a id="more"></a>
+<p>做法最小生成树很容易发现，但是难点在于想单独打井，设一个源点$0$，把每个井与$0$连边，费用就是打井所需费用</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> u,v,d;</span><br><span class="line">&#125;a[<span class="number">3000000</span>];</span><br><span class="line"><span class="keyword">int</span> cnt,x,n,m,ed,ans,f[<span class="number">400000</span>];</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(node a,node b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a.d&lt;b.d;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> k)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (f[k]==k)?k:(f[k]=find(f[k]));</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bing</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y,<span class="keyword">int</span> d)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> u=find(x),v=find(y);</span><br><span class="line">    <span class="keyword">if</span> (u==v)<span class="keyword">return</span>;</span><br><span class="line">    f[u]=v;</span><br><span class="line">    ans+=d;</span><br><span class="line">    ++ed;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">300000</span>;i++)f[i]=i;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;x);</span><br><span class="line">        a[++cnt].v=i;a[cnt].d=x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n;j++)&#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;x);</span><br><span class="line">            <span class="keyword">if</span> (j&lt;i)</span><br><span class="line">                a[++cnt].u=j,a[cnt].v=i,a[cnt].d=x;</span><br><span class="line">        &#125;</span><br><span class="line">    sort(a+<span class="number">1</span>,a+<span class="number">1</span>+cnt,cmp);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=cnt&amp;&amp;ed&lt;=<span class="number">2</span>*n+<span class="number">1</span>;i++)</span><br><span class="line">        bing(a[i].u,a[i].v,a[i].d);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>

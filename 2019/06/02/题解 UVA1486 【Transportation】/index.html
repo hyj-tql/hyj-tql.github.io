@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="heyuanjie的blog">
 <meta property="og:description" content="$Description$某国有$n(n\leqslant 100)$座城市，由$m(m\leqslant 5000)$条单向道路相连。你希望从城市$1$运送$k(k\leqslant 100)$单位货物到城市$n$，这些道路并不安全，有很多强盗，所以你需要雇佣保镖来做护卫。每条道路都有一个危险系$a_i(a_i\leqslant 100),$如果你带着$x$个单位的货物通过，需要给保镖$a_i\">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-02T08:31:36.646Z">
+<meta property="og:updated_time" content="2022-11-19T16:56:41.706Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 UVA1486 【Transportation】">
 <meta name="twitter:description" content="$Description$某国有$n(n\leqslant 100)$座城市，由$m(m\leqslant 5000)$条单向道路相连。你希望从城市$1$运送$k(k\leqslant 100)$单位货物到城市$n$，这些道路并不安全，有很多强盗，所以你需要雇佣保镖来做护卫。每条道路都有一个危险系$a_i(a_i\leqslant 100),$如果你带着$x$个单位的货物通过，需要给保镖$a_i\">
@@ -395,12 +395,24 @@
                 
               
 
-              <time title="创建时间：2019-06-02 16:30:42 / 修改时间：16:31:36" itemprop="dateCreated datePublished" datetime="2019-06-02T16:30:42+08:00">2019-06-02</time>
+              <time title="创建时间：2019-06-02 16:30:42" itemprop="dateCreated datePublished" datetime="2019-06-02T16:30:42+08:00">2019-06-02</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2022-11-20 00:56:41" itemprop="dateModified" datetime="2022-11-20T00:56:41+08:00">2022-11-20</time>
               
             
           </span>
@@ -434,6 +446,7 @@
 
       
         <h2 id="Description"><a href="#Description" class="headerlink" title="$Description$"></a>$Description$</h2><p>某国有$n(n\leqslant 100)$座城市，由$m(m\leqslant 5000)$条单向道路相连。你希望从城市$1$运送$k(k\leqslant 100)$单位货物到城市$n$，这些道路并不安全，有很多强盗，所以你需要雇佣保镖来做护卫。每条道路都有一个危险系$a_i(a_i\leqslant 100),$如果你带着$x$个单位的货物通过，需要给保镖$a_i\times x^{2}$的佣金，保镖才会保证你的安全。每条道路都有一个限制，最多能运送$c_i(c_i\leqslant 5)$的货物。现在问，在能完成运送$x$个单位的货物到$n$号城市的情况下最小的花费，如果送不到，则输出$-1$。</p>
+<a id="more"></a>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>很容易看出是费用流的做法，但是我们发现对于不同的流的大小,费用并不相同。由于题目给出$c_i\leqslant 5$,我们考虑拆边。</p>
 <p>我们将每条边拆成$c_i$条边，分别标成$e_{i,1\sim c_{i,j}}$.</p>
 <p>对于一条边$i$。</p>

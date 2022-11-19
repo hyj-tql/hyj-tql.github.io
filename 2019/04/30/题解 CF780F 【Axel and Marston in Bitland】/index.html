@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="题目要求第$i$个是由第$i-1$个和（第$i-1$个取反）拼在后面。 求最长路。 因此可以用倍增的思想进行$dp$，$dp$思路在代码中。可以用$bitset$优化 最后选取时从长的往短的枚举，在加的过程中大于$1e18$就退出 听说好像可以用矩乘优化，但蒟蒻我不会 12345678910111213141516171819202122232425262728293031323334353637">
-<meta name="keywords" content="倍增,$DP$">
+  <meta name="description" content="给定一张有向图(可能有自环，保证没有重边)，每条边有两种类型，分别为$1$或者$0 $从$1$开始走，要求走过的路径类型成如下方式 $0$ $01$ $0110$ $01101001$ 第$i$个是由第$i -1$个和第$i - 1$个取反拼在后面。 求最长路。">
+<meta name="keywords" content="$DP$,倍增">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 CF780F 【Axel and Marston in Bitland】">
 <meta property="og:url" content="http://yoursite.com/2019/04/30/题解 CF780F 【Axel and Marston in Bitland】/index.html">
 <meta property="og:site_name" content="heyuanjie的blog">
-<meta property="og:description" content="题目要求第$i$个是由第$i-1$个和（第$i-1$个取反）拼在后面。 求最长路。 因此可以用倍增的思想进行$dp$，$dp$思路在代码中。可以用$bitset$优化 最后选取时从长的往短的枚举，在加的过程中大于$1e18$就退出 听说好像可以用矩乘优化，但蒟蒻我不会 12345678910111213141516171819202122232425262728293031323334353637">
+<meta property="og:description" content="给定一张有向图(可能有自环，保证没有重边)，每条边有两种类型，分别为$1$或者$0 $从$1$开始走，要求走过的路径类型成如下方式 $0$ $01$ $0110$ $01101001$ 第$i$个是由第$i -1$个和第$i - 1$个取反拼在后面。 求最长路。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-01T05:36:03.777Z">
+<meta property="og:updated_time" content="2022-11-17T16:15:31.498Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 CF780F 【Axel and Marston in Bitland】">
-<meta name="twitter:description" content="题目要求第$i$个是由第$i-1$个和（第$i-1$个取反）拼在后面。 求最长路。 因此可以用倍增的思想进行$dp$，$dp$思路在代码中。可以用$bitset$优化 最后选取时从长的往短的枚举，在加的过程中大于$1e18$就退出 听说好像可以用矩乘优化，但蒟蒻我不会 12345678910111213141516171819202122232425262728293031323334353637">
+<meta name="twitter:description" content="给定一张有向图(可能有自环，保证没有重边)，每条边有两种类型，分别为$1$或者$0 $从$1$开始走，要求走过的路径类型成如下方式 $0$ $01$ $0110$ $01101001$ 第$i$个是由第$i -1$个和第$i - 1$个取反拼在后面。 求最长路。">
 
 
 
@@ -412,7 +412,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-01 13:36:03" itemprop="dateModified" datetime="2019-05-01T13:36:03+08:00">2019-05-01</time>
+                <time title="修改时间：2022-11-18 00:15:31" itemprop="dateModified" datetime="2022-11-18T00:15:31+08:00">2022-11-18</time>
               
             
           </span>
@@ -445,7 +445,14 @@
       
 
       
-        <p>题目要求第$i$个是由第$i-1$个和（第$i-1$个取反）拼在后面。 求最长路。</p>
+        <p>给定一张有向图(可能有自环，保证没有重边)，每条边有两种类型，分别为$1$或者$0 $从$1$开始走，要求走过的路径类型成如下方式</p>
+<p>$0$</p>
+<p>$01$</p>
+<p>$0110$</p>
+<p>$01101001$</p>
+<p>第$i$个是由第$i -1$个和第$i - 1$个取反拼在后面。 求最长路。</p>
+<a id="more"></a>
+<p>题目要求第$i$个是由第$i-1$个和（第$i-1$个取反）拼在后面。 求最长路。</p>
 <p>因此可以用倍增的思想进行$dp$，$dp$思路在代码中。可以用$bitset$优化</p>
 <p>最后选取时从长的往短的枚举，在加的过程中大于$1e18$就退出</p>
 <p>听说好像可以用矩乘优化，<del>但蒟蒻我不会</del></p>
@@ -473,9 +480,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/倍增/" rel="tag"># 倍增</a>
-          
             <a href="/tags/DP/" rel="tag"># $DP$</a>
+          
+            <a href="/tags/倍增/" rel="tag"># 倍增</a>
           
         </div>
       

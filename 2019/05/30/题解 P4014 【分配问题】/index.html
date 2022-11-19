@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="$Description$有 nn 件工作要分配给$n$个人做。第$i$个人做第$j$件工作产生的效益为 $c_{i,j}$。试设计一个将$n$件工作分配给$n$个人做的分配方案，使产生的总效益最大。 $Solution$一个人只能搭配一个任务，显然应该想到二分图，由于有权值，只需在二分图上跑费用流即可 以下边$(a,b)$表示容量为a,费用为$b$的边 首先从$s$向每个人连边$(1,0)$,再">
+  <meta name="description" content="$Description$有 nn 件工作要分配给$n$个人做。第$i$个人做第$j$件工作产生的效益为 $c_{i,j}$。试设计一个将$n$件工作分配给$n$个人做的分配方案，使产生的总效益最大。">
 <meta name="keywords" content="费用流,网络流$24$题,二分图">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 P4014 【分配问题】">
 <meta property="og:url" content="http://yoursite.com/2019/05/30/题解 P4014 【分配问题】/index.html">
 <meta property="og:site_name" content="heyuanjie的blog">
-<meta property="og:description" content="$Description$有 nn 件工作要分配给$n$个人做。第$i$个人做第$j$件工作产生的效益为 $c_{i,j}$。试设计一个将$n$件工作分配给$n$个人做的分配方案，使产生的总效益最大。 $Solution$一个人只能搭配一个任务，显然应该想到二分图，由于有权值，只需在二分图上跑费用流即可 以下边$(a,b)$表示容量为a,费用为$b$的边 首先从$s$向每个人连边$(1,0)$,再">
+<meta property="og:description" content="$Description$有 nn 件工作要分配给$n$个人做。第$i$个人做第$j$件工作产生的效益为 $c_{i,j}$。试设计一个将$n$件工作分配给$n$个人做的分配方案，使产生的总效益最大。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-30T14:17:01.821Z">
+<meta property="og:updated_time" content="2022-11-19T16:53:15.546Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 P4014 【分配问题】">
-<meta name="twitter:description" content="$Description$有 nn 件工作要分配给$n$个人做。第$i$个人做第$j$件工作产生的效益为 $c_{i,j}$。试设计一个将$n$件工作分配给$n$个人做的分配方案，使产生的总效益最大。 $Solution$一个人只能搭配一个任务，显然应该想到二分图，由于有权值，只需在二分图上跑费用流即可 以下边$(a,b)$表示容量为a,费用为$b$的边 首先从$s$向每个人连边$(1,0)$,再">
+<meta name="twitter:description" content="$Description$有 nn 件工作要分配给$n$个人做。第$i$个人做第$j$件工作产生的效益为 $c_{i,j}$。试设计一个将$n$件工作分配给$n$个人做的分配方案，使产生的总效益最大。">
 
 
 
@@ -395,12 +395,24 @@
                 
               
 
-              <time title="创建时间：2019-05-30 22:16:36 / 修改时间：22:17:01" itemprop="dateCreated datePublished" datetime="2019-05-30T22:16:36+08:00">2019-05-30</time>
+              <time title="创建时间：2019-05-30 22:16:36" itemprop="dateCreated datePublished" datetime="2019-05-30T22:16:36+08:00">2019-05-30</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2022-11-20 00:53:15" itemprop="dateModified" datetime="2022-11-20T00:53:15+08:00">2022-11-20</time>
               
             
           </span>
@@ -434,6 +446,7 @@
 
       
         <h2 id="Description"><a href="#Description" class="headerlink" title="$Description$"></a>$Description$</h2><p>有 nn 件工作要分配给$n$个人做。第$i$个人做第$j$件工作产生的效益为 $c_{i,j}$。试设计一个将$n$件工作分配给$n$个人做的分配方案，使产生的总效益最大。</p>
+<a id="more"></a>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>一个人只能搭配一个任务，显然应该想到二分图，由于有权值，只需在二分图上跑费用流即可</p>
 <p>以下边$(a,b)$表示容量为a,费用为$b$的边</p>
 <p>首先从$s$向每个人连边$(1,0)$,再从每个任务向$t$连边$(1,0)$</p>

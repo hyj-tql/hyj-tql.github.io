@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="heyuanjie的blog">
 <meta property="og:description" content="$Description$对一张$n$个点的图做$Q$次加边操作,每次给定$A_i,B_i,C_i,$然后按顺序连边$(A_i,B_i,C_i),(B_i,A_i+1,C_i+1),(A_i+1,B_i+1,C_i+2)$等等，求给定图的最小生成树$.(A_i,B_i,C_i$等点编号均为对$n$取模的意义下$)$给定初始的$n,q,A_i,B_i,C_i;$ $(N,Q\leqslant 200">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-22T07:10:41.140Z">
+<meta property="og:updated_time" content="2022-11-18T05:46:31.696Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 AT2134 【Zigzag MST】">
 <meta name="twitter:description" content="$Description$对一张$n$个点的图做$Q$次加边操作,每次给定$A_i,B_i,C_i,$然后按顺序连边$(A_i,B_i,C_i),(B_i,A_i+1,C_i+1),(A_i+1,B_i+1,C_i+2)$等等，求给定图的最小生成树$.(A_i,B_i,C_i$等点编号均为对$n$取模的意义下$)$给定初始的$n,q,A_i,B_i,C_i;$ $(N,Q\leqslant 200">
@@ -395,12 +395,24 @@
                 
               
 
-              <time title="创建时间：2019-09-22 15:10:06 / 修改时间：15:10:41" itemprop="dateCreated datePublished" datetime="2019-09-22T15:10:06+08:00">2019-09-22</time>
+              <time title="创建时间：2019-09-22 15:10:06" itemprop="dateCreated datePublished" datetime="2019-09-22T15:10:06+08:00">2019-09-22</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2022-11-18 13:46:31" itemprop="dateModified" datetime="2022-11-18T13:46:31+08:00">2022-11-18</time>
               
             
           </span>
@@ -435,6 +447,7 @@
       
         <h2 id="Description"><a href="#Description" class="headerlink" title="$Description$"></a>$Description$</h2><p>对一张$n$个点的图做$Q$次加边操作,每次给定$A_i,B_i,C_i,$然后按顺序连边$(A_i,B_i,C_i),(B_i,A_i+1,C_i+1),(A_i+1,B_i+1,C_i+2)$等等，求给定图的最小生成树$.(A_i,B_i,C_i$等点编号均为对$n$取模的意义下$)$给定初始的$n,q,A_i,B_i,C_i;$</p>
 <p>$(N,Q\leqslant 200000,0\leqslant A_i,B_i&lt;N,1\leqslant C_i\leqslant 10^9)$</p>
+<a id="more"></a>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>经过简单思考，我们发现，对于一次加边操作，最多加入$2\times n$条边，因为第$2\times n+1$条边为$((A_i+n)\%n,((B_i+n)\%n,d+2\times n)$即$(A_i,B_i,d+2\times n),$由于求最小生成树，往后的边加入就没有意义了。</p>
 <p>所以总边数为$N\times Q$,然而这个复杂度依然无法接受</p>
 <p>对于一次连边,假设连$(A_i,B_i,C_i),$那么第二条边就要连$(B_i,A_i+1,C_i+1),$由于此时$A_i$和$B_i$已经联通$(B_i,A_i+1,C_i+1)$其实等价于$(A_i,A_i+1,C_i+1)$</p>

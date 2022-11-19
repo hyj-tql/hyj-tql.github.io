@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="heyuanjie的blog">
 <meta property="og:description" content="$Description$现有$n$个太空站位于地球与月球之间，且有$m$艘公共交通太空船在其间来回穿梭。每个太空站可容纳无限多的人，而每艘太空船$i$只可容纳$h_i~$个人。每艘太空船将周期性地停靠一系列的太空站，例如$:(1,3,4)$表示该太空船将周期性地停靠太空站$134,134,134\cdots$。每一艘太空船从一个太空站驶往任一太空站耗时均为$1$。人们只能在太空船停靠太空站(或月">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-02T06:16:42.347Z">
+<meta property="og:updated_time" content="2022-11-19T16:56:10.228Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 P2754 【[CTSC1999]家园】">
 <meta name="twitter:description" content="$Description$现有$n$个太空站位于地球与月球之间，且有$m$艘公共交通太空船在其间来回穿梭。每个太空站可容纳无限多的人，而每艘太空船$i$只可容纳$h_i~$个人。每艘太空船将周期性地停靠一系列的太空站，例如$:(1,3,4)$表示该太空船将周期性地停靠太空站$134,134,134\cdots$。每一艘太空船从一个太空站驶往任一太空站耗时均为$1$。人们只能在太空船停靠太空站(或月">
@@ -395,12 +395,24 @@
                 
               
 
-              <time title="创建时间：2019-06-02 14:15:54 / 修改时间：14:16:42" itemprop="dateCreated datePublished" datetime="2019-06-02T14:15:54+08:00">2019-06-02</time>
+              <time title="创建时间：2019-06-02 14:15:54" itemprop="dateCreated datePublished" datetime="2019-06-02T14:15:54+08:00">2019-06-02</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2022-11-20 00:56:10" itemprop="dateModified" datetime="2022-11-20T00:56:10+08:00">2022-11-20</time>
               
             
           </span>
@@ -436,6 +448,7 @@
         <h2 id="Description"><a href="#Description" class="headerlink" title="$Description$"></a>$Description$</h2><p>现有$n$个太空站位于地球与月球之间，且有$m$艘公共交通太空船在其间来回穿梭。每个太空站可容纳无限多的人，而每艘太空船$i$只可容纳$h_i~$个人。每艘太空船将周期性地停靠一系列的太空站，例如$:(1,3,4)$表示该太空船将周期性地停靠太空站$134,134,134\cdots$。每一艘太空船从一个太空站驶往任一太空站耗时均为$1$。人们只能在太空船停靠太空站(或月球、地球)时上、下船。</p>
 <p>初始时所有人全在地球上，太空船全在初始站。试设计一个算法，找出让所有人尽快地全部转移到月球上的运输方案。</p>
 <p>对于给定的太空船的信息，找到让所有人尽快地全部转移到月球上的运输方案。</p>
+<a id="more"></a>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>用并查集判断是否有解法。将一艘飞船可以到达的所有星球并查集连起来，最后如果地球和月球无法连接，则无解。</p>
 <p>然后枚举答案。</p>
 <p>考虑按时间分层拆点。令$t$时刻的$i$号站为$c_{t,i}$。</p>

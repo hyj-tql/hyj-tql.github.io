@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="观察如果已经知道$1$号节点所需的时间 那么，我们可以做如下假设： ① 所有的牛首先到达了$1$号节点 ② $3$号节点以及他子树上的节点都需要退回$1-&amp;gt;3$的路径的长度 ③ 除了$3$号节点以及他子树上的节点都需要前进$1-&amp;gt;3$的路径的长度 通过上面的三条东西，我们就可以从任意一个父节点推出子节点的时间 所以，又是一遍$O(n)$的计算就可以推出最终的答案 $d[v] = d[u">
+  <meta name="description" content="题意:有$n$个点,$n-1$条边,每个点上有$c_{i}$个人.要选一个点使所有人到这个点的距离最小">
 <meta name="keywords" content="树形$DP$">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 P2986 [USACO10MAR]伟大的奶牛聚集">
 <meta property="og:url" content="http://yoursite.com/2019/04/30/题解 P2986 [USACO10MAR]伟大的奶牛聚集/index.html">
 <meta property="og:site_name" content="heyuanjie的blog">
-<meta property="og:description" content="观察如果已经知道$1$号节点所需的时间 那么，我们可以做如下假设： ① 所有的牛首先到达了$1$号节点 ② $3$号节点以及他子树上的节点都需要退回$1-&amp;gt;3$的路径的长度 ③ 除了$3$号节点以及他子树上的节点都需要前进$1-&amp;gt;3$的路径的长度 通过上面的三条东西，我们就可以从任意一个父节点推出子节点的时间 所以，又是一遍$O(n)$的计算就可以推出最终的答案 $d[v] = d[u">
+<meta property="og:description" content="题意:有$n$个点,$n-1$条边,每个点上有$c_{i}$个人.要选一个点使所有人到这个点的距离最小">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-01T05:59:05.662Z">
+<meta property="og:updated_time" content="2022-11-19T02:57:03.989Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 P2986 [USACO10MAR]伟大的奶牛聚集">
-<meta name="twitter:description" content="观察如果已经知道$1$号节点所需的时间 那么，我们可以做如下假设： ① 所有的牛首先到达了$1$号节点 ② $3$号节点以及他子树上的节点都需要退回$1-&amp;gt;3$的路径的长度 ③ 除了$3$号节点以及他子树上的节点都需要前进$1-&amp;gt;3$的路径的长度 通过上面的三条东西，我们就可以从任意一个父节点推出子节点的时间 所以，又是一遍$O(n)$的计算就可以推出最终的答案 $d[v] = d[u">
+<meta name="twitter:description" content="题意:有$n$个点,$n-1$条边,每个点上有$c_{i}$个人.要选一个点使所有人到这个点的距离最小">
 
 
 
@@ -412,7 +412,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-01 13:59:05" itemprop="dateModified" datetime="2019-05-01T13:59:05+08:00">2019-05-01</time>
+                <time title="修改时间：2022-11-19 10:57:03" itemprop="dateModified" datetime="2022-11-19T10:57:03+08:00">2022-11-19</time>
               
             
           </span>
@@ -445,7 +445,9 @@
       
 
       
-        <p>观察如果已经知道$1$号节点所需的时间</p>
+        <p>题意:有$n$个点,$n-1$条边,每个点上有$c_{i}$个人.要选一个点使所有人到这个点的距离最小</p>
+<a id="more"></a>
+<p>观察如果已经知道$1$号节点所需的时间</p>
 <p>那么，我们可以做如下假设：</p>
 <p>① 所有的牛首先到达了$1$号节点</p>
 <p>② $3$号节点以及他子树上的节点都需要退回$1-&gt;3$的路径的长度</p>

@@ -96,19 +96,19 @@
 
 
 
-  <meta name="description" content="题意：求网络流图中最小割点 一开始题意看成最小割边，把板子改了一下直接交，80(这样都能有80) 我们可以考虑“拆点”，即把一个点拆成两个点，中间连一条边权为1的边。 前一个点作为“入点”，别的点连边连入这里。 后一个点作为“出点”，出去的边从这里出去。 这样，只要我们切断中间那条边，就可以等效于除去这个点  红色的边边权为$1$，黑色的边边权为$inf$。 原点和汇点的内部边权为$inf$，因为">
+  <meta name="description" content="题意：求网络流图中最小割点">
 <meta name="keywords" content="网络流,最小割,拆点">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 P1345 [USACO5.4]奶牛的电信Telecowmunication">
 <meta property="og:url" content="http://yoursite.com/2019/04/30/题解 P1345 [USACO5.4]奶牛的电信Telecowmunication/index.html">
 <meta property="og:site_name" content="heyuanjie的blog">
-<meta property="og:description" content="题意：求网络流图中最小割点 一开始题意看成最小割边，把板子改了一下直接交，80(这样都能有80) 我们可以考虑“拆点”，即把一个点拆成两个点，中间连一条边权为1的边。 前一个点作为“入点”，别的点连边连入这里。 后一个点作为“出点”，出去的边从这里出去。 这样，只要我们切断中间那条边，就可以等效于除去这个点  红色的边边权为$1$，黑色的边边权为$inf$。 原点和汇点的内部边权为$inf$，因为">
+<meta property="og:description" content="题意：求网络流图中最小割点">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://cdn.luogu.org/upload/pic/20620.png">
-<meta property="og:updated_time" content="2019-05-30T15:19:28.226Z">
+<meta property="og:updated_time" content="2022-11-19T16:53:59.048Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 P1345 [USACO5.4]奶牛的电信Telecowmunication">
-<meta name="twitter:description" content="题意：求网络流图中最小割点 一开始题意看成最小割边，把板子改了一下直接交，80(这样都能有80) 我们可以考虑“拆点”，即把一个点拆成两个点，中间连一条边权为1的边。 前一个点作为“入点”，别的点连边连入这里。 后一个点作为“出点”，出去的边从这里出去。 这样，只要我们切断中间那条边，就可以等效于除去这个点  红色的边边权为$1$，黑色的边边权为$inf$。 原点和汇点的内部边权为$inf$，因为">
+<meta name="twitter:description" content="题意：求网络流图中最小割点">
 <meta name="twitter:image" content="https://cdn.luogu.org/upload/pic/20620.png">
 
 
@@ -414,7 +414,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-30 23:19:28" itemprop="dateModified" datetime="2019-05-30T23:19:28+08:00">2019-05-30</time>
+                <time title="修改时间：2022-11-20 00:53:59" itemprop="dateModified" datetime="2022-11-20T00:53:59+08:00">2022-11-20</time>
               
             
           </span>
@@ -448,6 +448,7 @@
 
       
         <p>题意：求网络流图中最小<strong>割点</strong></p>
+<a id="more"></a>
 <p>一开始题意看成最小割边，把板子改了一下直接交，80(<del>这样都能有80</del>)</p>
 <p>我们可以考虑“拆点”，即把一个点拆成两个点，中间连一条边权为1的边。</p>
 <p>前一个点作为“入点”，别的点连边连入这里。</p>

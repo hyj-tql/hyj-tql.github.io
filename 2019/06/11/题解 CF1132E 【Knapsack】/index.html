@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="$Description$你有一个容量为$W$的背包，和$8$种物品，重量分别为$1\sim 8$的整数，分别有$cnt_1,cnt_2\cdots cnt_8$ 个。求背包中最多能装上多大的重量。 $Solution$由于$W$很大，我们首先可以选出一些肯定会放在最终背包里面的物品，我们假设把背包分成很多个容量为$840$的背包，我们可以知道的是，每种物品都可以单独装满这个背包，因为$840$是">
+  <meta name="description" content="$Description$你有一个容量为$W$的背包，和$8$种物品，重量分别为$1\sim 8$的整数，分别有$cnt_1,cnt_2\cdots cnt_8$ 个。求背包中最多能装上多大的重量。">
 <meta name="keywords" content="背包">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 CF1132E 【Knapsack】">
 <meta property="og:url" content="http://yoursite.com/2019/06/11/题解 CF1132E 【Knapsack】/index.html">
 <meta property="og:site_name" content="heyuanjie的blog">
-<meta property="og:description" content="$Description$你有一个容量为$W$的背包，和$8$种物品，重量分别为$1\sim 8$的整数，分别有$cnt_1,cnt_2\cdots cnt_8$ 个。求背包中最多能装上多大的重量。 $Solution$由于$W$很大，我们首先可以选出一些肯定会放在最终背包里面的物品，我们假设把背包分成很多个容量为$840$的背包，我们可以知道的是，每种物品都可以单独装满这个背包，因为$840$是">
+<meta property="og:description" content="$Description$你有一个容量为$W$的背包，和$8$种物品，重量分别为$1\sim 8$的整数，分别有$cnt_1,cnt_2\cdots cnt_8$ 个。求背包中最多能装上多大的重量。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-11T15:04:28.767Z">
+<meta property="og:updated_time" content="2022-11-19T16:58:48.201Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 CF1132E 【Knapsack】">
-<meta name="twitter:description" content="$Description$你有一个容量为$W$的背包，和$8$种物品，重量分别为$1\sim 8$的整数，分别有$cnt_1,cnt_2\cdots cnt_8$ 个。求背包中最多能装上多大的重量。 $Solution$由于$W$很大，我们首先可以选出一些肯定会放在最终背包里面的物品，我们假设把背包分成很多个容量为$840$的背包，我们可以知道的是，每种物品都可以单独装满这个背包，因为$840$是">
+<meta name="twitter:description" content="$Description$你有一个容量为$W$的背包，和$8$种物品，重量分别为$1\sim 8$的整数，分别有$cnt_1,cnt_2\cdots cnt_8$ 个。求背包中最多能装上多大的重量。">
 
 
 
@@ -395,12 +395,24 @@
                 
               
 
-              <time title="创建时间：2019-06-11 23:04:07 / 修改时间：23:04:28" itemprop="dateCreated datePublished" datetime="2019-06-11T23:04:07+08:00">2019-06-11</time>
+              <time title="创建时间：2019-06-11 23:04:07" itemprop="dateCreated datePublished" datetime="2019-06-11T23:04:07+08:00">2019-06-11</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2022-11-20 00:58:48" itemprop="dateModified" datetime="2022-11-20T00:58:48+08:00">2022-11-20</time>
               
             
           </span>
@@ -434,6 +446,7 @@
 
       
         <h2 id="Description"><a href="#Description" class="headerlink" title="$Description$"></a>$Description$</h2><p>你有一个容量为$W$的背包，和$8$种物品，重量分别为$1\sim 8$的整数，分别有$cnt_1,cnt_2\cdots cnt_8$ 个。<br>求背包中最多能装上多大的重量。</p>
+<a id="more"></a>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>由于$W$很大，我们首先可以选出一些肯定会放在最终背包里面的物品，我们假设把背包分成很多个容量为$840$的背包，我们可以知道的是，每种物品都可以单独装满这个背包，因为$840$是$1\sim 8$的最小公倍数，之后我们只要把所有能凑成的$840$的物品丢进最终的答案，最后每种物品剩余的个数肯定是$&lt;840$的，最后这些物品的总重量是小于$840\times8$的，我们只需要用一个容量为$840\times8$的背包对剩下的这些物品进行背包就可以了。</p>
 <p>若要对第$i$种物品选$c_i$个，那么把$c_i$分解成$\frac{L}{i}\times p_i+q_i(0\leqslant q_i &lt;\frac{L}{i})$</p>
 <p>具体实现时把最后剩下的物品当作容量，把$p_i$当成价值</p>

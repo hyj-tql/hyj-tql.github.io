@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="$dp+hash$ 设子串长度为$m$，$f_{i}$表示到子串末尾在原句是第$i$个位置有几种方案，显然对于每个$f_{i}$有三种情况，当原句以$i$结尾的长度为$m$的字符串等于子串$f_{i}=f_{i-1}+f_{i-m}$,即选或不选，否则$f_{i}=f_{i-1}$,只能不选； 1234567891011121314151617181920212223242526272829#in">
+  <meta name="description" content="题意:对于一句原句和听到的句子，理解方式是将听到的句子替换掉原句的相同部分，替换成$*$，使得原句形成一个新的句子，以达到新的意思，你的任务是统计有多少种意思">
 <meta name="keywords" content="$hash$">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 P3618 【误会】">
 <meta property="og:url" content="http://yoursite.com/2019/04/30/题解 P3618 【误会】/index.html">
 <meta property="og:site_name" content="heyuanjie的blog">
-<meta property="og:description" content="$dp+hash$ 设子串长度为$m$，$f_{i}$表示到子串末尾在原句是第$i$个位置有几种方案，显然对于每个$f_{i}$有三种情况，当原句以$i$结尾的长度为$m$的字符串等于子串$f_{i}=f_{i-1}+f_{i-m}$,即选或不选，否则$f_{i}=f_{i-1}$,只能不选； 1234567891011121314151617181920212223242526272829#in">
+<meta property="og:description" content="题意:对于一句原句和听到的句子，理解方式是将听到的句子替换掉原句的相同部分，替换成$*$，使得原句形成一个新的句子，以达到新的意思，你的任务是统计有多少种意思">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-01T05:59:50.536Z">
+<meta property="og:updated_time" content="2022-11-19T03:02:22.493Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 P3618 【误会】">
-<meta name="twitter:description" content="$dp+hash$ 设子串长度为$m$，$f_{i}$表示到子串末尾在原句是第$i$个位置有几种方案，显然对于每个$f_{i}$有三种情况，当原句以$i$结尾的长度为$m$的字符串等于子串$f_{i}=f_{i-1}+f_{i-m}$,即选或不选，否则$f_{i}=f_{i-1}$,只能不选； 1234567891011121314151617181920212223242526272829#in">
+<meta name="twitter:description" content="题意:对于一句原句和听到的句子，理解方式是将听到的句子替换掉原句的相同部分，替换成$*$，使得原句形成一个新的句子，以达到新的意思，你的任务是统计有多少种意思">
 
 
 
@@ -412,7 +412,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-01 13:59:50" itemprop="dateModified" datetime="2019-05-01T13:59:50+08:00">2019-05-01</time>
+                <time title="修改时间：2022-11-19 11:02:22" itemprop="dateModified" datetime="2022-11-19T11:02:22+08:00">2022-11-19</time>
               
             
           </span>
@@ -445,7 +445,9 @@
       
 
       
-        <p>$dp+hash$</p>
+        <p>题意:对于一句原句和听到的句子，理解方式是将听到的句子替换掉原句的相同部分，替换成$*$，使得原句形成一个新的句子，以达到新的意思，你的任务是统计有多少种意思</p>
+<a id="more"></a>
+<p>$dp+hash$</p>
 <p>设子串长度为$m$，$f_{i}$表示到子串末尾在原句是第$i$个位置有几种方案，显然对于每个$f_{i}$有三种情况，当原句以$i$结尾的长度为$m$的字符串等于子串$f_{i}=f_{i-1}+f_{i-m}$,即选或不选，否则$f_{i}=f_{i-1}$,只能不选；</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ull unsigned long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> p=<span class="number">313</span>;</span><br><span class="line"><span class="keyword">int</span> v=<span class="number">1</span>,T,n,m,a[<span class="number">2000000</span>];</span><br><span class="line">ull power[<span class="number">2000000</span>],sum[<span class="number">2000000</span>],f[<span class="number">200000</span>],t;</span><br><span class="line"><span class="keyword">char</span> s1[<span class="number">200000</span>],s2[<span class="number">200000</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;T);</span><br><span class="line">    power[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">100001</span>;i++) power[i]=power[i<span class="number">-1</span>]*p;</span><br><span class="line">    <span class="keyword">while</span> (v&lt;=T)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%s\n%s"</span>,s1+<span class="number">1</span>,s2+<span class="number">1</span>);</span><br><span class="line">        <span class="built_in">memset</span>(f,<span class="number">0</span>,<span class="keyword">sizeof</span>(f));</span><br><span class="line">        n=<span class="built_in">strlen</span>(s1+<span class="number">1</span>);m=<span class="built_in">strlen</span>(s2+<span class="number">1</span>);t=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) </span><br><span class="line">            sum[i]=sum[i<span class="number">-1</span>]*p+s1[i]<span class="number">-96</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">            t=t*p+s2[i]<span class="number">-96</span>;</span><br><span class="line">        f[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">            <span class="keyword">if</span> (t==sum[i]-sum[i-m]*power[m])</span><br><span class="line">                f[i]=(f[i<span class="number">-1</span>]+f[i-m])%<span class="number">1000000007</span>;</span><br><span class="line">            <span class="keyword">else</span> f[i]=f[i<span class="number">-1</span>];</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Case #%d: %d\n"</span>,v,f[n]);</span><br><span class="line">        v++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       

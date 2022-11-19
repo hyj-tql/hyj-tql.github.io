@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="heyuanjie的blog">
 <meta property="og:description" content="$Description$有$n$张符卡排成一个队列，每张符卡有两个属性，等级$l_{i}$和伤害$d_{i}$。你可以做任意次操作，每次操作为以下二者之一： $1$. 把队首的符卡移动到队尾。 $2$. 使用队首的符卡，对敌人造成$d_{i}$点伤害，并丢弃队首的$l_{i}$张符卡（包括你所使用的符卡）。如果队列不足$l_{i}$张符卡那么你不能使用。 求出造成的伤害的总和的最大值。 $1$$">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-01T05:25:23.583Z">
+<meta property="og:updated_time" content="2022-11-17T15:56:59.287Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 SRM 563 Div1 500 SpellCards">
 <meta name="twitter:description" content="$Description$有$n$张符卡排成一个队列，每张符卡有两个属性，等级$l_{i}$和伤害$d_{i}$。你可以做任意次操作，每次操作为以下二者之一： $1$. 把队首的符卡移动到队尾。 $2$. 使用队首的符卡，对敌人造成$d_{i}$点伤害，并丢弃队首的$l_{i}$张符卡（包括你所使用的符卡）。如果队列不足$l_{i}$张符卡那么你不能使用。 求出造成的伤害的总和的最大值。 $1$$">
@@ -412,7 +412,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-01 13:25:23" itemprop="dateModified" datetime="2019-05-01T13:25:23+08:00">2019-05-01</time>
+                <time title="修改时间：2022-11-17 23:56:59" itemprop="dateModified" datetime="2022-11-17T23:56:59+08:00">2022-11-17</time>
               
             
           </span>
@@ -450,6 +450,7 @@
 <p>$2$. 使用队首的符卡，对敌人造成$d_{i}$点伤害，并丢弃队首的$l_{i}$张符卡（包括你所使用的符卡）。如果队列不足$l_{i}$张符卡那么你不能使用。</p>
 <p>求出造成的伤害的总和的最大值。</p>
 <p>$1$$\leqslant$$n$$\leqslant$$50,1$$\leqslant$$l_{i}$$\leqslant$$50,1$$\leqslant$$d_{i}$$\leqslant$$10000$</p>
+<a id="more"></a>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="$Solution:$"></a>$Solution:$</h2><p>我们可以把原问题简化成在环上操作，这样第一个操作就被简化掉了</p>
 <p>设我们选的集合的点的$l_{i}$为$L_{i}$，注意这里集合内的所有的$L_{i}$是可重的，也就是可以覆盖下一个点，例如下图是合法的。</p>
 <p><a href="https://i.loli.net/2019/04/20/5cbb06150ea5d.png" target="_blank" rel="noopener"></a></p>

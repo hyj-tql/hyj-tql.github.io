@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="$Description$求$01$背包前$k$优解的价值和 $Solution$简单的背包问题。我们知道$01$背包的转移条件是$f_{j}=max(f_{j},f_{j-v_{i}}+w_{i})$，也就是说$f_{j}$只会由$f_{j}$与$f_{j-v_{i}}$转移过来，我们考虑多加一维$k$优解，那么显然，$f_{j,k}$优解依然从$f_{j,p}(1\leqslant p\leq">
+  <meta name="description" content="$Description$求$01$背包前$k$优解的价值和">
 <meta name="keywords" content="背包">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 P1858 【多人背包】">
 <meta property="og:url" content="http://yoursite.com/2019/06/08/题解 P1858 【多人背包】/index.html">
 <meta property="og:site_name" content="heyuanjie的blog">
-<meta property="og:description" content="$Description$求$01$背包前$k$优解的价值和 $Solution$简单的背包问题。我们知道$01$背包的转移条件是$f_{j}=max(f_{j},f_{j-v_{i}}+w_{i})$，也就是说$f_{j}$只会由$f_{j}$与$f_{j-v_{i}}$转移过来，我们考虑多加一维$k$优解，那么显然，$f_{j,k}$优解依然从$f_{j,p}(1\leqslant p\leq">
+<meta property="og:description" content="$Description$求$01$背包前$k$优解的价值和">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-09T03:56:42.531Z">
+<meta property="og:updated_time" content="2022-11-19T16:58:11.948Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 P1858 【多人背包】">
-<meta name="twitter:description" content="$Description$求$01$背包前$k$优解的价值和 $Solution$简单的背包问题。我们知道$01$背包的转移条件是$f_{j}=max(f_{j},f_{j-v_{i}}+w_{i})$，也就是说$f_{j}$只会由$f_{j}$与$f_{j-v_{i}}$转移过来，我们考虑多加一维$k$优解，那么显然，$f_{j,k}$优解依然从$f_{j,p}(1\leqslant p\leq">
+<meta name="twitter:description" content="$Description$求$01$背包前$k$优解的价值和">
 
 
 
@@ -412,7 +412,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-09 11:56:42" itemprop="dateModified" datetime="2019-06-09T11:56:42+08:00">2019-06-09</time>
+                <time title="修改时间：2022-11-20 00:58:11" itemprop="dateModified" datetime="2022-11-20T00:58:11+08:00">2022-11-20</time>
               
             
           </span>
@@ -446,6 +446,7 @@
 
       
         <h2 id="Description"><a href="#Description" class="headerlink" title="$Description$"></a>$Description$</h2><p>求$01$背包前$k$优解的价值和</p>
+<a id="more"></a>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>简单的背包问题。我们知道$01$背包的转移条件是$f_{j}=max(f_{j},f_{j-v_{i}}+w_{i})$，也就是说$f_{j}$只会由$f_{j}$与$f_{j-v_{i}}$转移过来，我们考虑多加一维$k$优解，那么显然，$f_{j,k}$优解依然从$f_{j,p}(1\leqslant p\leqslant k)$与$f_{j-v_{i},p}(1\leqslant p\leqslant k)$转移过来。由于$k$很小，我们只需要用$f_{j,p}$与$f_{j-v_{i},p}$暴力判断第$k$优解更新答案即可。值得注意的是，这里的背包必须装满</p>
 <h2 id="Code"><a href="#Code" class="headerlink" title="$Code$"></a>$Code$</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> inf 0x3f3f3f3f</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 60000</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x=<span class="number">0</span>,w=<span class="number">0</span>;<span class="keyword">char</span> ch=getchar();</span><br><span class="line">    <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch))w|=ch==<span class="string">'-'</span>,ch=getchar();</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch))x=(x&lt;&lt;<span class="number">1</span>)+(x&lt;&lt;<span class="number">3</span>)+ch-<span class="string">'0'</span>,ch=getchar();</span><br><span class="line">    <span class="keyword">return</span> w?-x:x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> v[N],f[N][<span class="number">50</span>],w[N],t[N],ans;</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> k=read(),V=read(),n=read();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)v[i]=read(),w[i]=read();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=n;++i)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;=V;++j)</span><br><span class="line">            f[i][j]=-inf;</span><br><span class="line">    f[<span class="number">0</span>][<span class="number">1</span>]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j=V;j&gt;=v[i];--j)&#123;</span><br><span class="line">            <span class="keyword">int</span> l1=<span class="number">1</span>,l2=<span class="number">1</span>,cnt=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span> (cnt&lt;=k)&#123;</span><br><span class="line">                <span class="keyword">if</span> (f[j][l1]&gt;f[j-v[i]][l2]+w[i])</span><br><span class="line">                    t[++cnt]=f[j][l1++];</span><br><span class="line">                <span class="keyword">else</span> t[++cnt]=f[j-v[i]][l2++]+w[i];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> p=<span class="number">1</span>;p&lt;=k;++p)f[j][p]=t[p];</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=k;++i)ans+=f[V][i];</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       

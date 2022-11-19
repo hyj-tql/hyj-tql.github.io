@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="heyuanjie的blog">
 <meta property="og:description" content="$Description$假设有来自$m$个不同单位的代表参加一次国际会议。每个单位的代表数分别为$r_i(1\leqslant i\leqslant m)$。 会议餐厅共有$n$张餐桌，每张餐桌可容纳$c_i(1\leqslant i\leqslant n)$个代表就餐。 为了使代表们充分交流，希望从同一个单位来的代表不在同一个餐桌就餐。试设计一个算法，给出满足要求的代表就餐方案。 对于给定的代">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-30T14:04:41.456Z">
+<meta property="og:updated_time" content="2022-11-19T16:53:00.429Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 P3254 【圆桌问题】">
 <meta name="twitter:description" content="$Description$假设有来自$m$个不同单位的代表参加一次国际会议。每个单位的代表数分别为$r_i(1\leqslant i\leqslant m)$。 会议餐厅共有$n$张餐桌，每张餐桌可容纳$c_i(1\leqslant i\leqslant n)$个代表就餐。 为了使代表们充分交流，希望从同一个单位来的代表不在同一个餐桌就餐。试设计一个算法，给出满足要求的代表就餐方案。 对于给定的代">
@@ -395,12 +395,24 @@
                 
               
 
-              <time title="创建时间：2019-05-30 22:04:24 / 修改时间：22:04:41" itemprop="dateCreated datePublished" datetime="2019-05-30T22:04:24+08:00">2019-05-30</time>
+              <time title="创建时间：2019-05-30 22:04:24" itemprop="dateCreated datePublished" datetime="2019-05-30T22:04:24+08:00">2019-05-30</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2022-11-20 00:53:00" itemprop="dateModified" datetime="2022-11-20T00:53:00+08:00">2022-11-20</time>
               
             
           </span>
@@ -437,6 +449,7 @@
 <p>会议餐厅共有$n$张餐桌，每张餐桌可容纳$c_i(1\leqslant i\leqslant n)$个代表就餐。</p>
 <p>为了使代表们充分交流，希望从同一个单位来的代表不在同一个餐桌就餐。试设计一个算法，给出满足要求的代表就餐方案。</p>
 <p>对于给定的代表数和餐桌数以及餐桌容量，编程计算满足要求的代表就餐方案。</p>
+<a id="more"></a>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="$Solution$"></a>$Solution$</h2><h4 id="贪心做法"><a href="#贪心做法" class="headerlink" title="贪心做法"></a>贪心做法</h4><p>把桌子和单位的规模分别从大到小排个序(其实桌子拍不拍序没什么影响)。因为单位规模越大就越难满足，所以我们优先考虑他们;</p>
 <p>而对于桌子你可以这样想，你桌子数量越多显然更容易满足题意，又因为小桌子很快会坐满而导致不能用，所以我们优先坐大桌子。</p>
 <h4 id="还有一种最大流的做法"><a href="#还有一种最大流的做法" class="headerlink" title="还有一种最大流的做法"></a>还有一种最大流的做法</h4><p>考虑对桌子和单位构点。从源点连容量为$r_i$的边到单位$i$，从餐桌$i$连容量为$c_i$的边到汇点。</p>

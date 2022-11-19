@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="二分答案+$spfa$ 题意：求原点$1$到$n$的所有路中的第$k+1$长的路最小。 因为题意中的答案要最小，我们贪心肯定要使$k$次免费的资格用完，那么最划算的方案肯定是拿最长的$k$条路使之免费，然后付第$k+1$长路的长度的钱。。。这样的贪心思路显然是正确的。 我们首先二分第$k+1$长的路的长度(即答案)，然后关键是如何判断正确性。我们考虑简化问题，对于长度小于二分出的答案的线段，因为不">
+  <meta name="description" content="题意:求原点$1$到$n$的所有路中的第$k+1$长的路最小">
 <meta name="keywords" content="二分答案,最短路">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 P1948 [USACO08JAN]电话线Telephone Lines">
 <meta property="og:url" content="http://yoursite.com/2019/04/30/题解 P1948 [USACO08JAN]电话线Telephone Lines/index.html">
 <meta property="og:site_name" content="heyuanjie的blog">
-<meta property="og:description" content="二分答案+$spfa$ 题意：求原点$1$到$n$的所有路中的第$k+1$长的路最小。 因为题意中的答案要最小，我们贪心肯定要使$k$次免费的资格用完，那么最划算的方案肯定是拿最长的$k$条路使之免费，然后付第$k+1$长路的长度的钱。。。这样的贪心思路显然是正确的。 我们首先二分第$k+1$长的路的长度(即答案)，然后关键是如何判断正确性。我们考虑简化问题，对于长度小于二分出的答案的线段，因为不">
+<meta property="og:description" content="题意:求原点$1$到$n$的所有路中的第$k+1$长的路最小">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-01T05:52:20.508Z">
+<meta property="og:updated_time" content="2022-11-18T05:52:30.110Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 P1948 [USACO08JAN]电话线Telephone Lines">
-<meta name="twitter:description" content="二分答案+$spfa$ 题意：求原点$1$到$n$的所有路中的第$k+1$长的路最小。 因为题意中的答案要最小，我们贪心肯定要使$k$次免费的资格用完，那么最划算的方案肯定是拿最长的$k$条路使之免费，然后付第$k+1$长路的长度的钱。。。这样的贪心思路显然是正确的。 我们首先二分第$k+1$长的路的长度(即答案)，然后关键是如何判断正确性。我们考虑简化问题，对于长度小于二分出的答案的线段，因为不">
+<meta name="twitter:description" content="题意:求原点$1$到$n$的所有路中的第$k+1$长的路最小">
 
 
 
@@ -412,7 +412,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-01 13:52:20" itemprop="dateModified" datetime="2019-05-01T13:52:20+08:00">2019-05-01</time>
+                <time title="修改时间：2022-11-18 13:52:30" itemprop="dateModified" datetime="2022-11-18T13:52:30+08:00">2022-11-18</time>
               
             
           </span>
@@ -445,7 +445,9 @@
       
 
       
-        <p>二分答案+$spfa$</p>
+        <p>题意:求原点$1$到$n$的所有路中的第$k+1$长的路最小</p>
+<a id="more"></a>
+<p>二分答案+$spfa$</p>
 <p>题意：求原点$1$到$n$的所有路中的第$k+1$长的路最小。</p>
 <p>因为题意中的答案要最小，我们贪心肯定要使$k$次免费的资格用完，那么最划算的方案肯定是拿最长的$k$条路使之免费，然后付第$k+1$长路的长度的钱。。。这样的贪心思路显然是正确的。</p>
 <p>我们首先二分第$k+1$长的路的长度(即答案)，然后关键是如何判断正确性。我们考虑简化问题，对于长度小于二分出的答案的线段，因为不需要付价钱，所以可以将其权值看作是$0$;同理，大于二分的值的路径，我们将长度看作$1$(意味着我需要使用$1$次免费的资格)。我们跑一遍$spfa$，看到了$n$点的最短路的长度，如果大于$k$，则不行，缩小$r$范围继续二分;如果小于，则有可能更小，缩小$l$范围继续二分。</p>

@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="$Description$有$n$个水果,每个水果有两个属性：美味值和卡路里值。现在选用若干个（至少$1$个）水果制作一份特殊的沙拉，沙拉的美味值为所选的水果的美味值的和，沙拉的卡路里值为所选水果的卡路里值的和。要保证沙拉的美味值恰好是卡路里值的$K$倍。请计算该沙拉美味值最大为多少。 $Solution$根据题意可得$\sum a_{i}-k\times\sum b_{i}=0$ 所以我们考虑将">
+  <meta name="description" content="$Description$有$n$个水果,每个水果有两个属性：美味值和卡路里值。现在选用若干个（至少$1$个）水果制作一份特殊的沙拉，沙拉的美味值为所选的水果的美味值的和，沙拉的卡路里值为所选水果的卡路里值的和。要保证沙拉的美味值恰好是卡路里值的$K$倍。请计算该沙拉美味值最大为多少。">
 <meta name="keywords" content="背包,巧妙转化">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 CF366C 【Dima and Salad】">
 <meta property="og:url" content="http://yoursite.com/2019/05/25/题解 CF366C 【Dima and Salad】/index.html">
 <meta property="og:site_name" content="heyuanjie的blog">
-<meta property="og:description" content="$Description$有$n$个水果,每个水果有两个属性：美味值和卡路里值。现在选用若干个（至少$1$个）水果制作一份特殊的沙拉，沙拉的美味值为所选的水果的美味值的和，沙拉的卡路里值为所选水果的卡路里值的和。要保证沙拉的美味值恰好是卡路里值的$K$倍。请计算该沙拉美味值最大为多少。 $Solution$根据题意可得$\sum a_{i}-k\times\sum b_{i}=0$ 所以我们考虑将">
+<meta property="og:description" content="$Description$有$n$个水果,每个水果有两个属性：美味值和卡路里值。现在选用若干个（至少$1$个）水果制作一份特殊的沙拉，沙拉的美味值为所选的水果的美味值的和，沙拉的卡路里值为所选水果的卡路里值的和。要保证沙拉的美味值恰好是卡路里值的$K$倍。请计算该沙拉美味值最大为多少。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-25T13:47:37.839Z">
+<meta property="og:updated_time" content="2022-11-19T16:50:35.291Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 CF366C 【Dima and Salad】">
-<meta name="twitter:description" content="$Description$有$n$个水果,每个水果有两个属性：美味值和卡路里值。现在选用若干个（至少$1$个）水果制作一份特殊的沙拉，沙拉的美味值为所选的水果的美味值的和，沙拉的卡路里值为所选水果的卡路里值的和。要保证沙拉的美味值恰好是卡路里值的$K$倍。请计算该沙拉美味值最大为多少。 $Solution$根据题意可得$\sum a_{i}-k\times\sum b_{i}=0$ 所以我们考虑将">
+<meta name="twitter:description" content="$Description$有$n$个水果,每个水果有两个属性：美味值和卡路里值。现在选用若干个（至少$1$个）水果制作一份特殊的沙拉，沙拉的美味值为所选的水果的美味值的和，沙拉的卡路里值为所选水果的卡路里值的和。要保证沙拉的美味值恰好是卡路里值的$K$倍。请计算该沙拉美味值最大为多少。">
 
 
 
@@ -395,12 +395,24 @@
                 
               
 
-              <time title="创建时间：2019-05-25 21:47:07 / 修改时间：21:47:37" itemprop="dateCreated datePublished" datetime="2019-05-25T21:47:07+08:00">2019-05-25</time>
+              <time title="创建时间：2019-05-25 21:47:07" itemprop="dateCreated datePublished" datetime="2019-05-25T21:47:07+08:00">2019-05-25</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2022-11-20 00:50:35" itemprop="dateModified" datetime="2022-11-20T00:50:35+08:00">2022-11-20</time>
               
             
           </span>
@@ -434,6 +446,7 @@
 
       
         <h2 id="Description"><a href="#Description" class="headerlink" title="$Description$"></a>$Description$</h2><p>有$n$个水果,每个水果有两个属性：美味值和卡路里值。现在选用若干个（至少$1$个）水果制作一份特殊的沙拉，沙拉的美味值为所选的水果的美味值的和，沙拉的卡路里值为所选水果的卡路里值的和。要保证沙拉的美味值恰好是卡路里值的$K$倍。请计算该沙拉美味值最大为多少。</p>
+<a id="more"></a>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>根据题意可得$\sum a_{i}-k\times\sum b_{i}=0$</p>
 <p>所以我们考虑将$a_{i}$作为价值，$a_{i}-k\times b_{i}$作为重量，进行背包转移即可，由于重量有可能是负数，所以应用$map$存储转移数组或是将下标强行加上一个大数。</p>
 <h2 id="Code"><a href="#Code" class="headerlink" title="$Code$"></a>$Code$</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> re register</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> inf 0x3f3f3f3f</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 30007</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x=<span class="number">0</span>,w=<span class="number">0</span>;<span class="keyword">char</span> ch=getchar();</span><br><span class="line">    <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch))w|=ch==<span class="string">'-'</span>,ch=getchar();</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch))x=(x&lt;&lt;<span class="number">1</span>)+(x&lt;&lt;<span class="number">3</span>)+ch-<span class="string">'0'</span>,ch=getchar();</span><br><span class="line">    <span class="keyword">return</span> w?-x:x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> a[N],v[N],f[<span class="number">200</span>][N],g[<span class="number">200</span>][N];</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n=read(),k=read(),m=<span class="number">100</span>*n;<span class="built_in">memset</span>(f,<span class="number">-0x7f</span>,<span class="keyword">sizeof</span>(f));<span class="built_in">memset</span>(g,<span class="number">-0x7f</span>,<span class="keyword">sizeof</span>(g));</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)a[i]=read();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)v[i]=a[i]-read()*k;</span><br><span class="line">    f[<span class="number">0</span>][m]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;=<span class="number">2</span>*m;++j)</span><br><span class="line">            f[i][j]=max(f[i<span class="number">-1</span>][j],f[i<span class="number">-1</span>][j-v[i]]+a[i]);</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;(f[n][m]!=<span class="number">0</span>?f[n][m]:<span class="number">-1</span>)&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>

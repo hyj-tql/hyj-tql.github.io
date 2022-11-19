@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="我们可以考虑这样一种构造方法： 我们$dfs$整棵树，处理当前节点$u$时，将其子节点进行分块，如果需要进行分块的节点数不能整除块的大小，则将未被分块的子节点与$u$分在同一个块。 枚举$u$的每个子节点$v$，递归处理子树后，将每个子节点返回的未被分块的节点添加到集合$S$中，一旦$\vert S\vert\geqslant size$就把$S$作为一个新的块并将$u$作为省会，然后清空$S$并">
+  <meta name="description" content="题意:把一个有$n$个点的树划分成若干个省，要求每个省至少要有$B$个城市，最多可以有$3B$个城市。">
 <meta name="keywords" content="树分块">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 P2325 【[SCOI2005]王室联邦】">
 <meta property="og:url" content="http://yoursite.com/2019/05/19/题解 P2325 【[SCOI2005]王室联邦】/index.html">
 <meta property="og:site_name" content="heyuanjie的blog">
-<meta property="og:description" content="我们可以考虑这样一种构造方法： 我们$dfs$整棵树，处理当前节点$u$时，将其子节点进行分块，如果需要进行分块的节点数不能整除块的大小，则将未被分块的子节点与$u$分在同一个块。 枚举$u$的每个子节点$v$，递归处理子树后，将每个子节点返回的未被分块的节点添加到集合$S$中，一旦$\vert S\vert\geqslant size$就把$S$作为一个新的块并将$u$作为省会，然后清空$S$并">
+<meta property="og:description" content="题意:把一个有$n$个点的树划分成若干个省，要求每个省至少要有$B$个城市，最多可以有$3B$个城市。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-19T06:09:00.940Z">
+<meta property="og:updated_time" content="2022-11-19T16:45:33.695Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 P2325 【[SCOI2005]王室联邦】">
-<meta name="twitter:description" content="我们可以考虑这样一种构造方法： 我们$dfs$整棵树，处理当前节点$u$时，将其子节点进行分块，如果需要进行分块的节点数不能整除块的大小，则将未被分块的子节点与$u$分在同一个块。 枚举$u$的每个子节点$v$，递归处理子树后，将每个子节点返回的未被分块的节点添加到集合$S$中，一旦$\vert S\vert\geqslant size$就把$S$作为一个新的块并将$u$作为省会，然后清空$S$并">
+<meta name="twitter:description" content="题意:把一个有$n$个点的树划分成若干个省，要求每个省至少要有$B$个城市，最多可以有$3B$个城市。">
 
 
 
@@ -395,12 +395,24 @@
                 
               
 
-              <time title="创建时间：2019-05-19 14:07:07 / 修改时间：14:09:00" itemprop="dateCreated datePublished" datetime="2019-05-19T14:07:07+08:00">2019-05-19</time>
+              <time title="创建时间：2019-05-19 14:07:07" itemprop="dateCreated datePublished" datetime="2019-05-19T14:07:07+08:00">2019-05-19</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2022-11-20 00:45:33" itemprop="dateModified" datetime="2022-11-20T00:45:33+08:00">2022-11-20</time>
               
             
           </span>
@@ -433,7 +445,9 @@
       
 
       
-        <p>我们可以考虑这样一种构造方法：</p>
+        <p>  题意:把一个有$n$个点的树划分成若干个<strong>省</strong>，要求每个省至少要有$B$个城市，最多可以有$3B$个城市。</p>
+<a id="more"></a>
+<p>我们可以考虑这样一种构造方法：</p>
 <p>我们$dfs$整棵树，处理当前节点$u$时，将其子节点进行分块，如果需要进行分块的节点数不能整除块的大小，则将未被分块的子节点与$u$分在同一个块。</p>
 <p>枚举$u$的每个子节点$v$，递归处理子树后，将每个子节点返回的未被分块的节点添加到集合$S$中，一旦$\vert S\vert\geqslant size$就把$S$作为一个新的块并将$u$作为省会，然后清空$S$并继续枚举$v$。</p>
 <p>处理完所有子树后，将$u$也加入到集合$S$中，此时在$S$中的节点为未被分块的节点，将被返回到上一层，显然$S$的大小最大为$size$,$size-1$个子树节点$+u$节点本身。</p>

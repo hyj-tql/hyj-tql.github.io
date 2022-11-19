@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="$Description$你要从$A$到$B$，需要走$n$步。若你已走了$s$步，那么你再走一步的代价将为$a[s+1]$。 在走完每一步后有$\frac{1}{2}$的概率休息，休息后$s$将变为$0$。 求出你从$A$到$B$的代价的期望$p$乘上$2^{n-1}$对$998244353$取模的结果。 $Solution$由于乘了$2^{n-1},$所以答案即是所有情况走的代价之和 考虑一个">
-<meta name="keywords" content="$DP$,数学">
+  <meta name="description" content="$Description$你要从$A$到$B$，需要走$n$步。若你已走了$s$步，那么你再走一步的代价将为$a[s+1]$。 在走完每一步后有$\frac{1}{2}$的概率休息，休息后$s$将变为$0$。 求出你从$A$到$B$的代价的期望$p$乘上$2^{n-1}$对$998244353$取模的结果。">
+<meta name="keywords" content="数学,$DP$">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 CF1009E 【Intercity Travelling】">
 <meta property="og:url" content="http://yoursite.com/2019/10/13/题解 CF1009E 【Intercity Travelling】/index.html">
 <meta property="og:site_name" content="heyuanjie的blog">
-<meta property="og:description" content="$Description$你要从$A$到$B$，需要走$n$步。若你已走了$s$步，那么你再走一步的代价将为$a[s+1]$。 在走完每一步后有$\frac{1}{2}$的概率休息，休息后$s$将变为$0$。 求出你从$A$到$B$的代价的期望$p$乘上$2^{n-1}$对$998244353$取模的结果。 $Solution$由于乘了$2^{n-1},$所以答案即是所有情况走的代价之和 考虑一个">
+<meta property="og:description" content="$Description$你要从$A$到$B$，需要走$n$步。若你已走了$s$步，那么你再走一步的代价将为$a[s+1]$。 在走完每一步后有$\frac{1}{2}$的概率休息，休息后$s$将变为$0$。 求出你从$A$到$B$的代价的期望$p$乘上$2^{n-1}$对$998244353$取模的结果。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-13T01:57:25.790Z">
+<meta property="og:updated_time" content="2022-11-18T05:50:23.717Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 CF1009E 【Intercity Travelling】">
-<meta name="twitter:description" content="$Description$你要从$A$到$B$，需要走$n$步。若你已走了$s$步，那么你再走一步的代价将为$a[s+1]$。 在走完每一步后有$\frac{1}{2}$的概率休息，休息后$s$将变为$0$。 求出你从$A$到$B$的代价的期望$p$乘上$2^{n-1}$对$998244353$取模的结果。 $Solution$由于乘了$2^{n-1},$所以答案即是所有情况走的代价之和 考虑一个">
+<meta name="twitter:description" content="$Description$你要从$A$到$B$，需要走$n$步。若你已走了$s$步，那么你再走一步的代价将为$a[s+1]$。 在走完每一步后有$\frac{1}{2}$的概率休息，休息后$s$将变为$0$。 求出你从$A$到$B$的代价的期望$p$乘上$2^{n-1}$对$998244353$取模的结果。">
 
 
 
@@ -395,12 +395,24 @@
                 
               
 
-              <time title="创建时间：2019-10-13 09:56:47 / 修改时间：09:57:25" itemprop="dateCreated datePublished" datetime="2019-10-13T09:56:47+08:00">2019-10-13</time>
+              <time title="创建时间：2019-10-13 09:56:47" itemprop="dateCreated datePublished" datetime="2019-10-13T09:56:47+08:00">2019-10-13</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2022-11-18 13:50:23" itemprop="dateModified" datetime="2022-11-18T13:50:23+08:00">2022-11-18</time>
               
             
           </span>
@@ -436,6 +448,7 @@
         <h2 id="Description"><a href="#Description" class="headerlink" title="$Description$"></a>$Description$</h2><p>你要从$A$到$B$，需要走$n$步。若你已走了$s$步，那么你再走一步的代价将为$a[s+1]$。</p>
 <p>在走完每一步后有$\frac{1}{2}$的概率休息，休息后$s$将变为$0$。</p>
 <p>求出你从$A$到$B$的代价的期望$p$乘上$2^{n-1}$对$998244353$取模的结果。</p>
+<a id="more"></a>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>由于乘了$2^{n-1},$所以答案即是所有情况走的代价之和</p>
 <p>考虑一个复杂度为$O(n^2)$的$dp,$设$f[i]$表示走了$i$步后的答案。</p>
 <p>显然，$f[i]=\sum\limits_{i=1}^{i-1}(f[j]+2^{j-1}\times sum_{i-j})+sum_i$</p>
@@ -474,9 +487,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/DP/" rel="tag"># $DP$</a>
-          
             <a href="/tags/数学/" rel="tag"># 数学</a>
+          
+            <a href="/tags/DP/" rel="tag"># $DP$</a>
           
         </div>
       

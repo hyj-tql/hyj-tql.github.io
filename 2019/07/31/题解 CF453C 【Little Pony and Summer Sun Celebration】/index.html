@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="$Desciption$给一个无向图$,n$个点$m$条边，给定一个$01$序列，如果$a[i]=1,$要求走到这个点奇数次$,$否则，要求走到这个点偶数次$,$请你任选起点$,$输出满足要求的经过点的序列和序列长度$,$序列长度不能超过$4n$ $Solution$先判断是否有解，如果图不连通，且两个块中都有要求走过奇数次的点，就无解。 我们可以将$a$序列作为初始状态，每经过一次$i$号点，相">
+  <meta name="description" content="$Desciption$给一个无向图$,n$个点$m$条边，给定一个$01$序列，如果$a[i]=1,$要求走到这个点奇数次$,$否则，要求走到这个点偶数次$,$请你任选起点$,$输出满足要求的经过点的序列和序列长度$,$序列长度不能超过$4n$">
 <meta name="keywords" content="树相关,构造">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 CF453C 【Little Pony and Summer Sun Celebration】">
 <meta property="og:url" content="http://yoursite.com/2019/07/31/题解 CF453C 【Little Pony and Summer Sun Celebration】/index.html">
 <meta property="og:site_name" content="heyuanjie的blog">
-<meta property="og:description" content="$Desciption$给一个无向图$,n$个点$m$条边，给定一个$01$序列，如果$a[i]=1,$要求走到这个点奇数次$,$否则，要求走到这个点偶数次$,$请你任选起点$,$输出满足要求的经过点的序列和序列长度$,$序列长度不能超过$4n$ $Solution$先判断是否有解，如果图不连通，且两个块中都有要求走过奇数次的点，就无解。 我们可以将$a$序列作为初始状态，每经过一次$i$号点，相">
+<meta property="og:description" content="$Desciption$给一个无向图$,n$个点$m$条边，给定一个$01$序列，如果$a[i]=1,$要求走到这个点奇数次$,$否则，要求走到这个点偶数次$,$请你任选起点$,$输出满足要求的经过点的序列和序列长度$,$序列长度不能超过$4n$">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-31T10:25:07.140Z">
+<meta property="og:updated_time" content="2022-11-18T04:01:55.033Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 CF453C 【Little Pony and Summer Sun Celebration】">
-<meta name="twitter:description" content="$Desciption$给一个无向图$,n$个点$m$条边，给定一个$01$序列，如果$a[i]=1,$要求走到这个点奇数次$,$否则，要求走到这个点偶数次$,$请你任选起点$,$输出满足要求的经过点的序列和序列长度$,$序列长度不能超过$4n$ $Solution$先判断是否有解，如果图不连通，且两个块中都有要求走过奇数次的点，就无解。 我们可以将$a$序列作为初始状态，每经过一次$i$号点，相">
+<meta name="twitter:description" content="$Desciption$给一个无向图$,n$个点$m$条边，给定一个$01$序列，如果$a[i]=1,$要求走到这个点奇数次$,$否则，要求走到这个点偶数次$,$请你任选起点$,$输出满足要求的经过点的序列和序列长度$,$序列长度不能超过$4n$">
 
 
 
@@ -395,12 +395,24 @@
                 
               
 
-              <time title="创建时间：2019-07-31 18:24:30 / 修改时间：18:25:07" itemprop="dateCreated datePublished" datetime="2019-07-31T18:24:30+08:00">2019-07-31</time>
+              <time title="创建时间：2019-07-31 18:24:30" itemprop="dateCreated datePublished" datetime="2019-07-31T18:24:30+08:00">2019-07-31</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2022-11-18 12:01:55" itemprop="dateModified" datetime="2022-11-18T12:01:55+08:00">2022-11-18</time>
               
             
           </span>
@@ -434,6 +446,7 @@
 
       
         <h2 id="Desciption"><a href="#Desciption" class="headerlink" title="$Desciption$"></a>$Desciption$</h2><p>给一个无向图$,n$个点$m$条边，给定一个$01$序列，如果$a[i]=1,$要求走到这个点奇数次$,$否则，要求走到这个点偶数次$,$请你任选起点$,$输出满足要求的经过点的序列和序列长度$,$序列长度不能超过$4n$</p>
+<a id="more"></a>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>先判断是否有解，如果图不连通，且两个块中都有要求走过奇数次的点，就无解。</p>
 <p>我们可以将$a$序列作为初始状态，每经过一次$i$号点，相当于$a[i]~\hat{}=1,$目标是使$a$序列全部变成$0$</p>
 <p>选定一个要求走过奇数次的点作为$root,$每个点只走一次，最后回到$root,$那么走过的就是一棵树。</p>

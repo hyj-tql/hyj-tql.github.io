@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="题意：给你一棵树，可以把树上父亲相同的两条长度相同的链合并。（如图）问你最后能不能变成一条链，能的话求链的最短长度。 显然如果可以合并，那么合并后长度一定$\leqslant$直径的一半，所以，我们找到直径的中点作为根(若有两个中点则随便选一个) 对于每个点(除根以外)，如果它有两条或以上长度为不同的子节点形成的链，那么这棵树是无法合并的，输出$-1$，否则用一个$set$维护子节点形成的链长度情">
+  <meta name="description" content="题意：给你一棵树，可以把树上父亲相同的两条长度相同的链合并。（如图）问你最后能不能变成一条链，能的话求链的最短长度。">
 <meta name="keywords" content="思维题,树相关">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 CF765E Tree Folding">
 <meta property="og:url" content="http://yoursite.com/2019/04/29/题解 CF765E Tree Folding/index.html">
 <meta property="og:site_name" content="heyuanjie的blog">
-<meta property="og:description" content="题意：给你一棵树，可以把树上父亲相同的两条长度相同的链合并。（如图）问你最后能不能变成一条链，能的话求链的最短长度。 显然如果可以合并，那么合并后长度一定$\leqslant$直径的一半，所以，我们找到直径的中点作为根(若有两个中点则随便选一个) 对于每个点(除根以外)，如果它有两条或以上长度为不同的子节点形成的链，那么这棵树是无法合并的，输出$-1$，否则用一个$set$维护子节点形成的链长度情">
+<meta property="og:description" content="题意：给你一棵树，可以把树上父亲相同的两条长度相同的链合并。（如图）问你最后能不能变成一条链，能的话求链的最短长度。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-01T05:45:21.623Z">
+<meta property="og:updated_time" content="2022-11-18T03:04:39.223Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 CF765E Tree Folding">
-<meta name="twitter:description" content="题意：给你一棵树，可以把树上父亲相同的两条长度相同的链合并。（如图）问你最后能不能变成一条链，能的话求链的最短长度。 显然如果可以合并，那么合并后长度一定$\leqslant$直径的一半，所以，我们找到直径的中点作为根(若有两个中点则随便选一个) 对于每个点(除根以外)，如果它有两条或以上长度为不同的子节点形成的链，那么这棵树是无法合并的，输出$-1$，否则用一个$set$维护子节点形成的链长度情">
+<meta name="twitter:description" content="题意：给你一棵树，可以把树上父亲相同的两条长度相同的链合并。（如图）问你最后能不能变成一条链，能的话求链的最短长度。">
 
 
 
@@ -412,7 +412,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-01 13:45:21" itemprop="dateModified" datetime="2019-05-01T13:45:21+08:00">2019-05-01</time>
+                <time title="修改时间：2022-11-18 11:04:39" itemprop="dateModified" datetime="2022-11-18T11:04:39+08:00">2022-11-18</time>
               
             
           </span>
@@ -446,6 +446,7 @@
 
       
         <p>题意：给你一棵树，可以把树上父亲相同的两条长度相同的链合并。（如图）问你最后能不能变成一条链，能的话求链的最短长度。</p>
+<a id="more"></a>
 <p>显然如果可以合并，那么合并后长度一定$\leqslant$直径的一半，所以，我们找到直径的中点作为根(若有两个中点则随便选一个)</p>
 <p>对于每个点(除根以外)，如果它有两条或以上长度为不同的子节点形成的链，那么这棵树是无法合并的，输出$-1$，否则用一个$set$维护子节点形成的链长度情况，向上个节点传递$set$中链的长度$+1$</p>
 <p>特别的，对于根，因为它没有父亲节点，所以即使它有两条子节点形成的链，也是合法的(但是如果有三条及以上就不合法了)，如果有一条链，返回这条链的长度$+1$，如果有两条链，返回两条链长度之和$+2$；</p>

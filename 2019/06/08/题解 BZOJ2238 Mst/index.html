@@ -96,20 +96,20 @@
 
 
 
-  <meta name="description" content="$Description$给出一个$N$个点$M$条边的无向带权图，以及$Q$个询问，每次询问在图中删掉一条边后图的最小生成树。(各询问间独立，每次询问不对之后的询问产生影响，即被删掉的边在下一条询问中依然存在) $Solution$我们先做好图的最小生成树。 如果删除的边不在最小生成树上，那答案就是最小生成树，直接输出即可。 此时要找能够代替删去的边的一条权值最小的边。用这条边代替删去的边后就是">
+  <meta name="description" content="$Description$给出一个$N$个点$M$条边的无向带权图，以及$Q$个询问，每次询问在图中删掉一条边后图的最小生成树。(各询问间独立，每次询问不对之后的询问产生影响，即被删掉的边在下一条询问中依然存在)">
 <meta name="keywords" content="最小生成树,树链剖分,线段树">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 BZOJ2238 Mst">
 <meta property="og:url" content="http://yoursite.com/2019/06/08/题解 BZOJ2238 Mst/index.html">
 <meta property="og:site_name" content="heyuanjie的blog">
-<meta property="og:description" content="$Description$给出一个$N$个点$M$条边的无向带权图，以及$Q$个询问，每次询问在图中删掉一条边后图的最小生成树。(各询问间独立，每次询问不对之后的询问产生影响，即被删掉的边在下一条询问中依然存在) $Solution$我们先做好图的最小生成树。 如果删除的边不在最小生成树上，那答案就是最小生成树，直接输出即可。 此时要找能够代替删去的边的一条权值最小的边。用这条边代替删去的边后就是">
+<meta property="og:description" content="$Description$给出一个$N$个点$M$条边的无向带权图，以及$Q$个询问，每次询问在图中删掉一条边后图的最小生成树。(各询问间独立，每次询问不对之后的询问产生影响，即被删掉的边在下一条询问中依然存在)">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.loli.net/2019/06/10/5cfe71d6bc3e227290.png">
 <meta property="og:image" content="https://i.loli.net/2019/06/10/5cfe71d6ac71c24500.png">
-<meta property="og:updated_time" content="2019-06-10T15:25:51.748Z">
+<meta property="og:updated_time" content="2022-11-19T16:58:34.063Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 BZOJ2238 Mst">
-<meta name="twitter:description" content="$Description$给出一个$N$个点$M$条边的无向带权图，以及$Q$个询问，每次询问在图中删掉一条边后图的最小生成树。(各询问间独立，每次询问不对之后的询问产生影响，即被删掉的边在下一条询问中依然存在) $Solution$我们先做好图的最小生成树。 如果删除的边不在最小生成树上，那答案就是最小生成树，直接输出即可。 此时要找能够代替删去的边的一条权值最小的边。用这条边代替删去的边后就是">
+<meta name="twitter:description" content="$Description$给出一个$N$个点$M$条边的无向带权图，以及$Q$个询问，每次询问在图中删掉一条边后图的最小生成树。(各询问间独立，每次询问不对之后的询问产生影响，即被删掉的边在下一条询问中依然存在)">
 <meta name="twitter:image" content="https://i.loli.net/2019/06/10/5cfe71d6bc3e227290.png">
 
 
@@ -415,7 +415,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-10 23:25:51" itemprop="dateModified" datetime="2019-06-10T23:25:51+08:00">2019-06-10</time>
+                <time title="修改时间：2022-11-20 00:58:34" itemprop="dateModified" datetime="2022-11-20T00:58:34+08:00">2022-11-20</time>
               
             
           </span>
@@ -449,6 +449,7 @@
 
       
         <h2 id="Description"><a href="#Description" class="headerlink" title="$Description$"></a>$Description$</h2><p>给出一个$N$个点$M$条边的无向带权图，以及$Q$个询问，每次询问在图中删掉一条边后图的最小生成树。(各询问间独立，每次询问不对之后的询问产生影响，即被删掉的边在下一条询问中依然存在)</p>
+<a id="more"></a>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>我们先做好图的最小生成树。</p>
 <p>如果删除的边不在最小生成树上，那答案就是最小生成树，直接输出即可。</p>
 <p>此时要找能够代替删去的边的一条权值最小的边。用这条边代替删去的边后就是新的最小生成树了。</p>

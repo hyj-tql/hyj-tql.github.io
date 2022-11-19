@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="首先考虑边权只有$0,1$的情况。这时候只需要$Floyd$矩阵进行矩阵乘法即可，但是这道题的边权并不是$0,1$，那么我们能不能让$Floyd$矩阵中的每个单位存大于$1$的边权，然后矩乘呢？ 不能也就是说在$Floyd$矩阵中每个单位的值只能是$0$或$1$，但是我们发现$2 &amp;lt;= N &amp;lt;= 10$，这意味着我们可以乱搞将每个点都拆开，将这张图转化成边权只有$0,1$的图，这样上面">
+  <meta name="description" content="该有向图有 $n$ 个节点，节点从 $1$ 至 $n$ 编号，windy 从节点 $1$ 出发，他必须恰好在 $t$ 时刻到达节点 $n$。 现在给出该有向图，你能告诉 windy 总共有多少种不同的路径吗？  答案对 $2009$ 取模。 注意：windy 不能在某个节点逗留，且通过某有向边的时间严格为给定的时间。 $2 \leq n \leq 10$，$1 \leq t \leq 10^9$。">
 <meta name="keywords" content="矩阵快速幂">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 P4159 【[SCOI2009]迷路】">
 <meta property="og:url" content="http://yoursite.com/2019/04/30/题解 P4159 【[SCOI2009]迷路】/index.html">
 <meta property="og:site_name" content="heyuanjie的blog">
-<meta property="og:description" content="首先考虑边权只有$0,1$的情况。这时候只需要$Floyd$矩阵进行矩阵乘法即可，但是这道题的边权并不是$0,1$，那么我们能不能让$Floyd$矩阵中的每个单位存大于$1$的边权，然后矩乘呢？ 不能也就是说在$Floyd$矩阵中每个单位的值只能是$0$或$1$，但是我们发现$2 &amp;lt;= N &amp;lt;= 10$，这意味着我们可以乱搞将每个点都拆开，将这张图转化成边权只有$0,1$的图，这样上面">
+<meta property="og:description" content="该有向图有 $n$ 个节点，节点从 $1$ 至 $n$ 编号，windy 从节点 $1$ 出发，他必须恰好在 $t$ 时刻到达节点 $n$。 现在给出该有向图，你能告诉 windy 总共有多少种不同的路径吗？  答案对 $2009$ 取模。 注意：windy 不能在某个节点逗留，且通过某有向边的时间严格为给定的时间。 $2 \leq n \leq 10$，$1 \leq t \leq 10^9$。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-01T05:32:11.422Z">
+<meta property="og:updated_time" content="2022-11-17T16:13:37.457Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 P4159 【[SCOI2009]迷路】">
-<meta name="twitter:description" content="首先考虑边权只有$0,1$的情况。这时候只需要$Floyd$矩阵进行矩阵乘法即可，但是这道题的边权并不是$0,1$，那么我们能不能让$Floyd$矩阵中的每个单位存大于$1$的边权，然后矩乘呢？ 不能也就是说在$Floyd$矩阵中每个单位的值只能是$0$或$1$，但是我们发现$2 &amp;lt;= N &amp;lt;= 10$，这意味着我们可以乱搞将每个点都拆开，将这张图转化成边权只有$0,1$的图，这样上面">
+<meta name="twitter:description" content="该有向图有 $n$ 个节点，节点从 $1$ 至 $n$ 编号，windy 从节点 $1$ 出发，他必须恰好在 $t$ 时刻到达节点 $n$。 现在给出该有向图，你能告诉 windy 总共有多少种不同的路径吗？  答案对 $2009$ 取模。 注意：windy 不能在某个节点逗留，且通过某有向边的时间严格为给定的时间。 $2 \leq n \leq 10$，$1 \leq t \leq 10^9$。">
 
 
 
@@ -412,7 +412,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-01 13:32:11" itemprop="dateModified" datetime="2019-05-01T13:32:11+08:00">2019-05-01</time>
+                <time title="修改时间：2022-11-18 00:13:37" itemprop="dateModified" datetime="2022-11-18T00:13:37+08:00">2022-11-18</time>
               
             
           </span>
@@ -445,7 +445,13 @@
       
 
       
-        <p>首先考虑边权只有$0,1$的情况。这时候只需要$Floyd$矩阵进行矩阵乘法即可，但是这道题的边权并不是$0,1$，那么我们能不能让$Floyd$矩阵中的每个单位存大于$1$的边权，然后矩乘呢？</p>
+        <p>该有向图有 $n$ 个节点，节点从 $1$ 至 $n$ 编号，windy 从节点 $1$ 出发，他必须恰好在 $t$ 时刻到达节点 $n$。</p>
+<p>现在给出该有向图，你能告诉 windy 总共有多少种不同的路径吗？ </p>
+<p>答案对 $2009$ 取模。</p>
+<p>注意：windy 不能在某个节点逗留，且通过某有向边的时间严格为给定的时间。</p>
+<p>$2 \leq n \leq 10$，$1 \leq t \leq 10^9$。</p>
+<a id="more"></a>
+<p>首先考虑边权只有$0,1$的情况。这时候只需要$Floyd$矩阵进行矩阵乘法即可，但是这道题的边权并不是$0,1$，那么我们能不能让$Floyd$矩阵中的每个单位存大于$1$的边权，然后矩乘呢？</p>
 <h1 id="不能"><a href="#不能" class="headerlink" title="不能"></a>不能</h1><p>也就是说在$Floyd$矩阵中每个单位的值只能是$0$或$1$，但是我们发现$2 &lt;= N &lt;= 10$，这意味着我们可以乱搞将每个点都拆开，将这张图转化成边权只有$0,1$的图，这样上面的意义就成立了。</p>
 <p>我们发现可以将每个点拆成$9$个点，令有序数对$(i,j)$表示点$i$拆成的第$j$个点，其中第$0$个点是“真”点，其余的是“假”点。</p>
 <p>我们可以令 $(i,j)$表示到“真”点$(i,0)$的距离为j的“假”点，只要让$(i,j)$向$(i,j-1)$连一条边权为$1$的边。</p>

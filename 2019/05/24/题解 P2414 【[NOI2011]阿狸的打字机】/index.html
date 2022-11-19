@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="heyuanjie的blog">
 <meta property="og:description" content="$Description$打字机上只有$28$个按键，分别印有$26$个小写英文字母和$’B’$、$’P’$两个字母。这个打字机是这样工作的： 输入小写字母，打字机的一个凹槽中会加入这个字母(这个字母加在凹槽的最后)。 按一下印有$’B’$的按键，打字机凹槽中最后一个字母会消失。  按一下印有$’P’$的按键，打字机会在纸上打印出凹槽中现有的所有字母并换行，但凹槽中的字母不会消失。 例如，阿狸输入">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-24T14:53:07.145Z">
+<meta property="og:updated_time" content="2022-11-19T16:50:23.454Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 P2414 【[NOI2011]阿狸的打字机】">
 <meta name="twitter:description" content="$Description$打字机上只有$28$个按键，分别印有$26$个小写英文字母和$’B’$、$’P’$两个字母。这个打字机是这样工作的： 输入小写字母，打字机的一个凹槽中会加入这个字母(这个字母加在凹槽的最后)。 按一下印有$’B’$的按键，打字机凹槽中最后一个字母会消失。  按一下印有$’P’$的按键，打字机会在纸上打印出凹槽中现有的所有字母并换行，但凹槽中的字母不会消失。 例如，阿狸输入">
@@ -395,12 +395,24 @@
                 
               
 
-              <time title="创建时间：2019-05-24 22:52:15 / 修改时间：22:53:07" itemprop="dateCreated datePublished" datetime="2019-05-24T22:52:15+08:00">2019-05-24</time>
+              <time title="创建时间：2019-05-24 22:52:15" itemprop="dateCreated datePublished" datetime="2019-05-24T22:52:15+08:00">2019-05-24</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2022-11-20 00:50:23" itemprop="dateModified" datetime="2022-11-20T00:50:23+08:00">2022-11-20</time>
               
             
           </span>
@@ -437,6 +449,7 @@
 <p>输入小写字母，打字机的一个凹槽中会加入这个字母(这个字母加在凹槽的最后)。</p>
 <p>按一下印有$’B’$的按键，打字机凹槽中最后一个字母会消失。 </p>
 <p>按一下印有$’P’$的按键，打字机会在纸上打印出凹槽中现有的所有字母并换行，但凹槽中的字母不会消失。 例如，阿狸输入$aPaPBbP$，纸上被打印的字符如下：$a aa ab$我们把纸上打印出来的字符串从$1$开始顺序编号，一直到$n$。打字机有一个非常有趣的功能，在打字机中暗藏一个带数字的小键盘，在小键盘上输入两个数$(x,y)($其中$1\leqslant x,y\leqslant n)$，打字机会显示第$x$个打印的字符串在第$y$个打印的字符串中出现了多少次。 </p>
+<a id="more"></a>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="$Solution:$"></a>$Solution:$</h2><p>先无脑搭出一只$AC$自动机再说，然后再考虑各档分的做法</p>
 <h3 id="40"><a href="#40" class="headerlink" title="$40$"></a>$40$</h3><p>给每个串的结束位置都标记一下，给$AC$自动机中的每个节点记录一个父亲节点，然后对于每个串的结束位置都暴力往上跳，计算有几个被标记过的节点即可</p>
 <h3 id="70-1"><a href="#70-1" class="headerlink" title="$70(1)$"></a>$70(1)$</h3><p>这样对于每一个询问都要暴力往上跳</p>

@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="$Description$给你一张有向图。每条边有一个容量$c$和一个扩容费用$w$。每将这条边的容量扩大$1$就需要$w$的费用。 求$1 \sim n$的最大流和将最大流扩大$k$的最小费用。 $Solution$对于第一问，直接求最大流即可 考虑对于残量网络中的每条边$e$，在图上连一条流量为$\infty$，费用为$w_e$的边。 然后从$s$连一条边到$1$，容量为$k$，以保证扩容流量">
+  <meta name="description" content="$Description$给你一张有向图。每条边有一个容量$c$和一个扩容费用$w$。每将这条边的容量扩大$1$就需要$w$的费用。 求$1 \sim n$的最大流和将最大流扩大$k$的最小费用。">
 <meta name="keywords" content="费用流">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 P2604 【[ZJOI2010]网络扩容】">
 <meta property="og:url" content="http://yoursite.com/2019/06/01/题解 P2604 【[ZJOI2010]网络扩容】/index.html">
 <meta property="og:site_name" content="heyuanjie的blog">
-<meta property="og:description" content="$Description$给你一张有向图。每条边有一个容量$c$和一个扩容费用$w$。每将这条边的容量扩大$1$就需要$w$的费用。 求$1 \sim n$的最大流和将最大流扩大$k$的最小费用。 $Solution$对于第一问，直接求最大流即可 考虑对于残量网络中的每条边$e$，在图上连一条流量为$\infty$，费用为$w_e$的边。 然后从$s$连一条边到$1$，容量为$k$，以保证扩容流量">
+<meta property="og:description" content="$Description$给你一张有向图。每条边有一个容量$c$和一个扩容费用$w$。每将这条边的容量扩大$1$就需要$w$的费用。 求$1 \sim n$的最大流和将最大流扩大$k$的最小费用。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-01T11:44:33.853Z">
+<meta property="og:updated_time" content="2022-11-19T16:55:21.779Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 P2604 【[ZJOI2010]网络扩容】">
-<meta name="twitter:description" content="$Description$给你一张有向图。每条边有一个容量$c$和一个扩容费用$w$。每将这条边的容量扩大$1$就需要$w$的费用。 求$1 \sim n$的最大流和将最大流扩大$k$的最小费用。 $Solution$对于第一问，直接求最大流即可 考虑对于残量网络中的每条边$e$，在图上连一条流量为$\infty$，费用为$w_e$的边。 然后从$s$连一条边到$1$，容量为$k$，以保证扩容流量">
+<meta name="twitter:description" content="$Description$给你一张有向图。每条边有一个容量$c$和一个扩容费用$w$。每将这条边的容量扩大$1$就需要$w$的费用。 求$1 \sim n$的最大流和将最大流扩大$k$的最小费用。">
 
 
 
@@ -395,12 +395,24 @@
                 
               
 
-              <time title="创建时间：2019-06-01 19:43:55 / 修改时间：19:44:33" itemprop="dateCreated datePublished" datetime="2019-06-01T19:43:55+08:00">2019-06-01</time>
+              <time title="创建时间：2019-06-01 19:43:55" itemprop="dateCreated datePublished" datetime="2019-06-01T19:43:55+08:00">2019-06-01</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2022-11-20 00:55:21" itemprop="dateModified" datetime="2022-11-20T00:55:21+08:00">2022-11-20</time>
               
             
           </span>
@@ -435,6 +447,7 @@
       
         <h2 id="Description"><a href="#Description" class="headerlink" title="$Description$"></a>$Description$</h2><p>给你一张有向图。每条边有一个容量$c$和一个扩容费用$w$。每将这条边的容量扩大$1$就需要$w$的费用。</p>
 <p>求$1 \sim n$的最大流和将最大流扩大$k$的最小费用。</p>
+<a id="more"></a>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>对于第一问，直接求最大流即可</p>
 <p>考虑对于残量网络中的每条边$e$，在图上连一条流量为$\infty$，费用为$w_e$的边。</p>
 <p>然后从$s$连一条边到$1$，容量为$k$，以保证扩容流量正好是$k$。</p>
@@ -477,8 +490,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/01/题解 P4015 【运输问题】/" rel="next" title="题解 P4015 【运输问题】">
-                <i class="fa fa-chevron-left"></i> 题解 P4015 【运输问题】
+              <a href="/2019/06/01/题解 P3980 【[NOI2008]志愿者招募】/" rel="next" title="题解 P3980 【[NOI2008]志愿者招募】">
+                <i class="fa fa-chevron-left"></i> 题解 P3980 【[NOI2008]志愿者招募】
               </a>
             
           </div>
@@ -487,8 +500,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/06/01/题解 P3980 【[NOI2008]志愿者招募】/" rel="prev" title="题解 P3980 【[NOI2008]志愿者招募】">
-                题解 P3980 【[NOI2008]志愿者招募】 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/06/01/题解 P2050 【[NOI2012]美食节】/" rel="prev" title="题解 P2050 【[NOI2012]美食节】">
+                题解 P2050 【[NOI2012]美食节】 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

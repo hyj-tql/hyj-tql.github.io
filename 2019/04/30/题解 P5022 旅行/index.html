@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="题意：前$60$分图是一棵树，直接暴力$dfs$枚举边，暴力判断,$O(n)$。后$40$分是一颗基环树，暴力删边,再按照前$60$分的方法暴力$dfs$，$O(n^2)$。 但是这样会$T$飞，所以我们要优化 优化$1:$我们发现我们每条边都删一遍完全没必要，只需对那个环上的所有边进行删除操作，用并查集判环即可 优化$2:$我们发现要求字典序最小，所以我们$dfs$时可以进行最优性剪枝，如果前面">
+  <meta name="description" content="P5022 [NOIP2018 提高组] 旅行">
 <meta name="keywords" content="剪枝优化">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 P5022 旅行">
 <meta property="og:url" content="http://yoursite.com/2019/04/30/题解 P5022 旅行/index.html">
 <meta property="og:site_name" content="heyuanjie的blog">
-<meta property="og:description" content="题意：前$60$分图是一棵树，直接暴力$dfs$枚举边，暴力判断,$O(n)$。后$40$分是一颗基环树，暴力删边,再按照前$60$分的方法暴力$dfs$，$O(n^2)$。 但是这样会$T$飞，所以我们要优化 优化$1:$我们发现我们每条边都删一遍完全没必要，只需对那个环上的所有边进行删除操作，用并查集判环即可 优化$2:$我们发现要求字典序最小，所以我们$dfs$时可以进行最优性剪枝，如果前面">
+<meta property="og:description" content="P5022 [NOIP2018 提高组] 旅行">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-01T05:36:49.165Z">
+<meta property="og:updated_time" content="2022-11-17T16:18:43.512Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 P5022 旅行">
-<meta name="twitter:description" content="题意：前$60$分图是一棵树，直接暴力$dfs$枚举边，暴力判断,$O(n)$。后$40$分是一颗基环树，暴力删边,再按照前$60$分的方法暴力$dfs$，$O(n^2)$。 但是这样会$T$飞，所以我们要优化 优化$1:$我们发现我们每条边都删一遍完全没必要，只需对那个环上的所有边进行删除操作，用并查集判环即可 优化$2:$我们发现要求字典序最小，所以我们$dfs$时可以进行最优性剪枝，如果前面">
+<meta name="twitter:description" content="P5022 [NOIP2018 提高组] 旅行">
 
 
 
@@ -412,7 +412,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-01 13:36:49" itemprop="dateModified" datetime="2019-05-01T13:36:49+08:00">2019-05-01</time>
+                <time title="修改时间：2022-11-18 00:18:43" itemprop="dateModified" datetime="2022-11-18T00:18:43+08:00">2022-11-18</time>
               
             
           </span>
@@ -445,7 +445,9 @@
       
 
       
-        <p>题意：前$60$分图是一棵树，直接暴力$dfs$枚举边，暴力判断,$O(n)$。后$40$分是一颗基环树，暴力删边,再按照前$60$分的方法暴力$dfs$，$O(n^2)$。</p>
+        <p><a href="https://www.luogu.com.cn/problem/P5022" target="_blank" rel="noopener">P5022 [NOIP2018 提高组] 旅行</a></p>
+<a id="more"></a>
+<p>题意：前$60$分图是一棵树，直接暴力$dfs$枚举边，暴力判断,$O(n)$。后$40$分是一颗基环树，暴力删边,再按照前$60$分的方法暴力$dfs$，$O(n^2)$。</p>
 <p>但是这样会$T$飞，所以我们要优化</p>
 <p>优化$1:$我们发现我们每条边都删一遍完全没必要，只需对那个环上的所有边进行删除操作，用并查集判环即可</p>
 <p>优化$2:$我们发现要求字典序最小，所以我们$dfs$时可以进行最优性剪枝，如果前面的编号与当前答案都相同(注意，这个前提很重要)，当前这条边的编号大于答案那么就可以$return$了。</p>

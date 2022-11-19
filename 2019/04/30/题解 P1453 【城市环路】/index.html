@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="会了这道题就可以顺便$A$了P2607 [ZJOI2008]骑士 由于只有$n$条边，每个点之间互通，所以图就是一颗基环树 所以只需要$dfs$找环，在环上找任意一条边，枚举这条边的两端中其中一端不选(因为两端不能同时选，所以至少有一端不选)，然后进行树形$dp$即可，由于然后这道题就和没有上司的舞会一样了。 dfs找环：一边走一边用一个$vis$数组标记，回溯时$vis$清零，如果当前点的儿子上">
+  <meta name="description" content="基环树上$dp$">
 <meta name="keywords" content="树形$DP$">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 P1453 【城市环路】">
 <meta property="og:url" content="http://yoursite.com/2019/04/30/题解 P1453 【城市环路】/index.html">
 <meta property="og:site_name" content="heyuanjie的blog">
-<meta property="og:description" content="会了这道题就可以顺便$A$了P2607 [ZJOI2008]骑士 由于只有$n$条边，每个点之间互通，所以图就是一颗基环树 所以只需要$dfs$找环，在环上找任意一条边，枚举这条边的两端中其中一端不选(因为两端不能同时选，所以至少有一端不选)，然后进行树形$dp$即可，由于然后这道题就和没有上司的舞会一样了。 dfs找环：一边走一边用一个$vis$数组标记，回溯时$vis$清零，如果当前点的儿子上">
+<meta property="og:description" content="基环树上$dp$">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-01T05:29:20.387Z">
+<meta property="og:updated_time" content="2022-11-17T16:03:09.742Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 P1453 【城市环路】">
-<meta name="twitter:description" content="会了这道题就可以顺便$A$了P2607 [ZJOI2008]骑士 由于只有$n$条边，每个点之间互通，所以图就是一颗基环树 所以只需要$dfs$找环，在环上找任意一条边，枚举这条边的两端中其中一端不选(因为两端不能同时选，所以至少有一端不选)，然后进行树形$dp$即可，由于然后这道题就和没有上司的舞会一样了。 dfs找环：一边走一边用一个$vis$数组标记，回溯时$vis$清零，如果当前点的儿子上">
+<meta name="twitter:description" content="基环树上$dp$">
 
 
 
@@ -412,7 +412,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-01 13:29:20" itemprop="dateModified" datetime="2019-05-01T13:29:20+08:00">2019-05-01</time>
+                <time title="修改时间：2022-11-18 00:03:09" itemprop="dateModified" datetime="2022-11-18T00:03:09+08:00">2022-11-18</time>
               
             
           </span>
@@ -445,7 +445,9 @@
       
 
       
-        <p>会了这道题就可以顺便$A$了<a href="https://www.luogu.org/problemnew/show/P2607" target="_blank" rel="noopener">P2607 [ZJOI2008]骑士</a></p>
+        <p>基环树上$dp$</p>
+<a id="more"></a>
+<p>会了这道题就可以顺便$A$了<a href="https://www.luogu.org/problemnew/show/P2607" target="_blank" rel="noopener">P2607 [ZJOI2008]骑士</a></p>
 <p>由于只有$n$条边，每个点之间互通，所以图就是一颗基环树</p>
 <p>所以只需要$dfs$找环，在环上找任意一条边，枚举这条边的两端中其中一端不选(因为两端不能同时选，所以至少有一端不选)，然后进行树形$dp$即可，由于然后这道题就和<a href="https://www.luogu.org/problemnew/show/P1352" target="_blank" rel="noopener">没有上司的舞会</a>一样了。</p>
 <h3 id="dfs找环："><a href="#dfs找环：" class="headerlink" title="dfs找环："></a>dfs找环：</h3><p>一边走一边用一个$vis$数组标记，回溯时$vis$清零，如果当前点的儿子上有$vis$标记,那么这个点和它的儿子就在环上。</p>

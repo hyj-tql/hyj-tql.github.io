@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="heyuanjie的blog">
 <meta property="og:description" content="$Description$$Mirko$在一个养猪场工作，养猪场有$M$个关着的猪圈，$Mirko$不能打开任何猪圈，因为他没钥匙。顾客一个接一个(顺序不能改变)地来到养猪场，他们各拥有一些猪圈的钥匙，想买若干猪。Mirko早就知道关于那天来农场的顾客的所有数据，他可以制定一个销售计划，以便尽可能增加出售的猪的数量。更明确地，整个过程如下：顾客来了，顾客用手里的钥匙打开猪圈了，$Mirko$把他要">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-30T12:37:39.174Z">
+<meta property="og:updated_time" content="2022-11-19T16:51:40.557Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 SP4063 【MPIGS - Sell Pigs】">
 <meta name="twitter:description" content="$Description$$Mirko$在一个养猪场工作，养猪场有$M$个关着的猪圈，$Mirko$不能打开任何猪圈，因为他没钥匙。顾客一个接一个(顺序不能改变)地来到养猪场，他们各拥有一些猪圈的钥匙，想买若干猪。Mirko早就知道关于那天来农场的顾客的所有数据，他可以制定一个销售计划，以便尽可能增加出售的猪的数量。更明确地，整个过程如下：顾客来了，顾客用手里的钥匙打开猪圈了，$Mirko$把他要">
@@ -395,12 +395,24 @@
                 
               
 
-              <time title="创建时间：2019-05-30 20:37:15 / 修改时间：20:37:39" itemprop="dateCreated datePublished" datetime="2019-05-30T20:37:15+08:00">2019-05-30</time>
+              <time title="创建时间：2019-05-30 20:37:15" itemprop="dateCreated datePublished" datetime="2019-05-30T20:37:15+08:00">2019-05-30</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2022-11-20 00:51:40" itemprop="dateModified" datetime="2022-11-20T00:51:40+08:00">2022-11-20</time>
               
             
           </span>
@@ -435,6 +447,7 @@
       
         <h2 id="Description"><a href="#Description" class="headerlink" title="$Description$"></a>$Description$</h2><p>$Mirko$在一个养猪场工作，养猪场有$M$个关着的猪圈，$Mirko$不能打开任何猪圈，因为他没钥匙。顾客一个接一个(顺序不能改变)地来到养猪场，他们各拥有一些猪圈的钥匙，想买若干猪。Mirko早就知道关于那天来农场的顾客的所有数据，他可以制定一个销售计划，以便尽可能增加出售的猪的数量。更明确地，整个过程如下：顾客来了，顾客用手里的钥匙打开猪圈了，$Mirko$把他要的猪(从当前打开着的猪圈中选出需要数量)卖给他，并且重排（当前开着的猪圈中的）剩余的猪，</p>
 <p>注意，猪圈的容量无穷大。请尽可能最大化他能卖出的猪的数量,顾客来的顺序不可改变，顾客来后、调整完后猪圈门会关闭。</p>
+<a id="more"></a>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>在某个拥有$k$的钥匙的顾客$a$买过猪后，</p>
 <p>在之后买猪的某个同样拥有钥匙$k$的顾客$b$也能买到$a$能买到的猪(因为$a$买剩下的猪可以在$a$买后调整到$k$中)。</p>
 <p>所以，从$a$向$b$连边即可，流量为$inf$。</p>

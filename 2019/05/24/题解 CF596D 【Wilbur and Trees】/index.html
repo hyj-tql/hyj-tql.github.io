@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="$Description$太长了,不想解释(逃 $Solution:$容易发现,砍树是从两端开始砍的，因此两端会影响中间，而中间则不会影响到两端的树，因为砍到中间的时候，两端的树都已经砍过了.所以做$dp$的时候，例如正在处理区间$i$到$j$，我们不需要关注区间内的树是向哪边倒的，因为中间的树不会影响两端的，我们需要关注的是$i-1$和$j+1$位的地方的树，因为只有这些地方会对中间的树有影响，">
+  <meta name="description" content="$Description$有$n$课树并排排列，每棵树高$h$。每次从剩余的树中选最左边的或最右边的（概率相等为$0.5$），砍掉一棵树，树倒向左边的概率为$p$，倒向右边的概率为$1-p$。如果树和相邻树的距离小于$h$，树倒时会把相邻的树撞倒，倒的方向和撞到它的树一致。问，砍完所有树，树干覆盖的草地长度的期望值。">
 <meta name="keywords" content="概率期望$DP$,分类讨论">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 CF596D 【Wilbur and Trees】">
 <meta property="og:url" content="http://yoursite.com/2019/05/24/题解 CF596D 【Wilbur and Trees】/index.html">
 <meta property="og:site_name" content="heyuanjie的blog">
-<meta property="og:description" content="$Description$太长了,不想解释(逃 $Solution:$容易发现,砍树是从两端开始砍的，因此两端会影响中间，而中间则不会影响到两端的树，因为砍到中间的时候，两端的树都已经砍过了.所以做$dp$的时候，例如正在处理区间$i$到$j$，我们不需要关注区间内的树是向哪边倒的，因为中间的树不会影响两端的，我们需要关注的是$i-1$和$j+1$位的地方的树，因为只有这些地方会对中间的树有影响，">
+<meta property="og:description" content="$Description$有$n$课树并排排列，每棵树高$h$。每次从剩余的树中选最左边的或最右边的（概率相等为$0.5$），砍掉一棵树，树倒向左边的概率为$p$，倒向右边的概率为$1-p$。如果树和相邻树的距离小于$h$，树倒时会把相邻的树撞倒，倒的方向和撞到它的树一致。问，砍完所有树，树干覆盖的草地长度的期望值。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-24T14:52:05.308Z">
+<meta property="og:updated_time" content="2022-11-19T16:49:52.986Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 CF596D 【Wilbur and Trees】">
-<meta name="twitter:description" content="$Description$太长了,不想解释(逃 $Solution:$容易发现,砍树是从两端开始砍的，因此两端会影响中间，而中间则不会影响到两端的树，因为砍到中间的时候，两端的树都已经砍过了.所以做$dp$的时候，例如正在处理区间$i$到$j$，我们不需要关注区间内的树是向哪边倒的，因为中间的树不会影响两端的，我们需要关注的是$i-1$和$j+1$位的地方的树，因为只有这些地方会对中间的树有影响，">
+<meta name="twitter:description" content="$Description$有$n$课树并排排列，每棵树高$h$。每次从剩余的树中选最左边的或最右边的（概率相等为$0.5$），砍掉一棵树，树倒向左边的概率为$p$，倒向右边的概率为$1-p$。如果树和相邻树的距离小于$h$，树倒时会把相邻的树撞倒，倒的方向和撞到它的树一致。问，砍完所有树，树干覆盖的草地长度的期望值。">
 
 
 
@@ -395,12 +395,24 @@
                 
               
 
-              <time title="创建时间：2019-05-24 21:21:34 / 修改时间：22:52:05" itemprop="dateCreated datePublished" datetime="2019-05-24T21:21:34+08:00">2019-05-24</time>
+              <time title="创建时间：2019-05-24 21:21:34" itemprop="dateCreated datePublished" datetime="2019-05-24T21:21:34+08:00">2019-05-24</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2022-11-20 00:49:52" itemprop="dateModified" datetime="2022-11-20T00:49:52+08:00">2022-11-20</time>
               
             
           </span>
@@ -433,7 +445,8 @@
       
 
       
-        <h2 id="Description"><a href="#Description" class="headerlink" title="$Description$"></a>$Description$</h2><p>太长了,不想解释(逃</p>
+        <h2 id="Description"><a href="#Description" class="headerlink" title="$Description$"></a>$Description$</h2><p>有$n$课树并排排列，每棵树高$h$。每次从剩余的树中选最左边的或最右边的（概率相等为$0.5$），砍掉一棵树，树倒向左边的概率为$p$，倒向右边的概率为$1-p$。如果树和相邻树的距离小于$h$，树倒时会把相邻的树撞倒，倒的方向和撞到它的树一致。问，砍完所有树，树干覆盖的草地长度的期望值。</p>
+<a id="more"></a>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="$Solution:$"></a>$Solution:$</h2><p>容易发现,砍树是从两端开始砍的，因此两端会影响中间，而中间则不会影响到两端的树，因为砍到中间的时候，两端的树都已经砍过了.所以做$dp$的时候，例如正在处理区间$i$到$j$，我们不需要关注区间内的树是向哪边倒的，因为中间的树不会影响两端的，我们需要关注的是$i-1$和$j+1$位的地方的树，因为只有这些地方会对中间的树有影响，所以我们用$dp[i][j][0/1][0/1]$来表式$i-1$和$j+1$这两棵树的状态时，$i$到$j$之间的答案。若状态若为$0$，则表示向左侧倒，若为$1$，则表示向右侧倒。</p>
 <p>接下来分类讨论:</p>
 <p>$1.$第$i$颗树向左倒，不会影响别的树</p>

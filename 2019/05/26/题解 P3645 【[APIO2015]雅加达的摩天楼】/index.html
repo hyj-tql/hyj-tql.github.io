@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="heyuanjie的blog">
 <meta property="og:description" content="$Description$有$m$只$doge$分布在$n$个摩天大楼上。楼和$doge$都是从$0$开始编号。 每只$doge$初始位置$b[i]$，弹跳力$p[i]$。 它每一次跳会恰好跳$p[i]$个大楼。比如从$x$可以到$x±p[i]$。 现在，$0$号$doge$要把某信息传给$1$号$doge$。对于一只$doge$，若它尚未知道信息，就不能动。 对于一只$doge$，若它已经知道信">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-26T04:56:32.753Z">
+<meta property="og:updated_time" content="2022-11-19T16:51:02.314Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 P3645 【[APIO2015]雅加达的摩天楼】">
 <meta name="twitter:description" content="$Description$有$m$只$doge$分布在$n$个摩天大楼上。楼和$doge$都是从$0$开始编号。 每只$doge$初始位置$b[i]$，弹跳力$p[i]$。 它每一次跳会恰好跳$p[i]$个大楼。比如从$x$可以到$x±p[i]$。 现在，$0$号$doge$要把某信息传给$1$号$doge$。对于一只$doge$，若它尚未知道信息，就不能动。 对于一只$doge$，若它已经知道信">
@@ -395,12 +395,24 @@
                 
               
 
-              <time title="创建时间：2019-05-26 12:55:46 / 修改时间：12:56:32" itemprop="dateCreated datePublished" datetime="2019-05-26T12:55:46+08:00">2019-05-26</time>
+              <time title="创建时间：2019-05-26 12:55:46" itemprop="dateCreated datePublished" datetime="2019-05-26T12:55:46+08:00">2019-05-26</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2022-11-20 00:51:02" itemprop="dateModified" datetime="2022-11-20T00:51:02+08:00">2022-11-20</time>
               
             
           </span>
@@ -437,6 +449,7 @@
 <p>每只$doge$初始位置$b[i]$，弹跳力$p[i]$。 它每一次跳会恰好跳$p[i]$个大楼。比如从$x$可以到$x±p[i]$。</p>
 <p>现在，$0$号$doge$要把某信息传给$1$号$doge$。对于一只$doge$，若它尚未知道信息，就不能动。 对于一只$doge$，若它已经知道信息，可以选择把信息告诉处于同一位置的$doge$们，或者跳去别的位置。</p>
 <p>求最少跳的步数。</p>
+<a id="more"></a>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>先考虑暴力</p>
 <p>对于每一只$doge$，我们从$b[i]$ 连边到所有它可以跳到（可以跳好多步）的位置，边权为需要跳的次数。</p>
 <p>从$b[0]$跑一下最短路即可。</p>

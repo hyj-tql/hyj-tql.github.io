@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="很显然，要求的方案数可以转化为所有方案数减去不含质数的方案数 对于所有方案，设$f_{i,j}$表示前$i$个数$mod~p$等于$j$的方案数 $f_{i,j}=\sum\limits_{k=1}^{m}f_{i-1,((j-k)\%p+p)\%p}$ 对于不含质数的方案，我们只需先预处理$cnt_i$表示$1$~$m$中$\%p==i$的合数的个数，设$g_{i,j}$表示前$i$个数$mod">
+  <meta name="description" content="题意:Alice 想要得到一个长度为 $n$ 的序列，序列中的数都是不超过 $m$ 的正整数，而且这 $n$ 个数的和是 $p$ 的倍数。 Alice 还希望，这 $n$ 个数中，至少有一个数是质数。 Alice 想知道，有多少个序列满足她的要求。 $1\leq n \leq 10^9,1\leq m \leq 2\times 10^7,1\leq p\leq 100$。">
 <meta name="keywords" content="矩阵快速幂">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 P3702 【[SDOI2017]序列计数】">
 <meta property="og:url" content="http://yoursite.com/2019/05/19/题解 P3702 【[SDOI2017]序列计数】/index.html">
 <meta property="og:site_name" content="heyuanjie的blog">
-<meta property="og:description" content="很显然，要求的方案数可以转化为所有方案数减去不含质数的方案数 对于所有方案，设$f_{i,j}$表示前$i$个数$mod~p$等于$j$的方案数 $f_{i,j}=\sum\limits_{k=1}^{m}f_{i-1,((j-k)\%p+p)\%p}$ 对于不含质数的方案，我们只需先预处理$cnt_i$表示$1$~$m$中$\%p==i$的合数的个数，设$g_{i,j}$表示前$i$个数$mod">
+<meta property="og:description" content="题意:Alice 想要得到一个长度为 $n$ 的序列，序列中的数都是不超过 $m$ 的正整数，而且这 $n$ 个数的和是 $p$ 的倍数。 Alice 还希望，这 $n$ 个数中，至少有一个数是质数。 Alice 想知道，有多少个序列满足她的要求。 $1\leq n \leq 10^9,1\leq m \leq 2\times 10^7,1\leq p\leq 100$。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-19T09:49:53.416Z">
+<meta property="og:updated_time" content="2022-11-19T16:46:47.801Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 P3702 【[SDOI2017]序列计数】">
-<meta name="twitter:description" content="很显然，要求的方案数可以转化为所有方案数减去不含质数的方案数 对于所有方案，设$f_{i,j}$表示前$i$个数$mod~p$等于$j$的方案数 $f_{i,j}=\sum\limits_{k=1}^{m}f_{i-1,((j-k)\%p+p)\%p}$ 对于不含质数的方案，我们只需先预处理$cnt_i$表示$1$~$m$中$\%p==i$的合数的个数，设$g_{i,j}$表示前$i$个数$mod">
+<meta name="twitter:description" content="题意:Alice 想要得到一个长度为 $n$ 的序列，序列中的数都是不超过 $m$ 的正整数，而且这 $n$ 个数的和是 $p$ 的倍数。 Alice 还希望，这 $n$ 个数中，至少有一个数是质数。 Alice 想知道，有多少个序列满足她的要求。 $1\leq n \leq 10^9,1\leq m \leq 2\times 10^7,1\leq p\leq 100$。">
 
 
 
@@ -395,12 +395,24 @@
                 
               
 
-              <time title="创建时间：2019-05-19 17:46:43 / 修改时间：17:49:53" itemprop="dateCreated datePublished" datetime="2019-05-19T17:46:43+08:00">2019-05-19</time>
+              <time title="创建时间：2019-05-19 17:46:43" itemprop="dateCreated datePublished" datetime="2019-05-19T17:46:43+08:00">2019-05-19</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2022-11-20 00:46:47" itemprop="dateModified" datetime="2022-11-20T00:46:47+08:00">2022-11-20</time>
               
             
           </span>
@@ -433,7 +445,12 @@
       
 
       
-        <p>很显然，要求的方案数可以转化为所有方案数减去不含质数的方案数</p>
+        <p>题意:Alice 想要得到一个长度为 $n$ 的序列，序列中的数都是不超过 $m$ 的正整数，而且这 $n$ 个数的和是 $p$ 的倍数。</p>
+<p>Alice 还希望，这 $n$ 个数中，至少有一个数是质数。</p>
+<p>Alice 想知道，有多少个序列满足她的要求。</p>
+<p>$1\leq n \leq 10^9,1\leq m \leq 2\times 10^7,1\leq p\leq 100$。</p>
+<a id="more"></a>
+<p>很显然，要求的方案数可以转化为所有方案数减去不含质数的方案数</p>
 <p>对于所有方案，设$f_{i,j}$表示前$i$个数$mod~p$等于$j$的方案数</p>
 <p>$f_{i,j}=\sum\limits_{k=1}^{m}f_{i-1,((j-k)\%p+p)\%p}$</p>
 <p>对于不含质数的方案，我们只需先预处理$cnt_i$表示$1$~$m$中$\%p==i$的合数的个数，设$g_{i,j}$表示前$i$个数$mod~p$等于$j$且没有质数的方案数。</p>

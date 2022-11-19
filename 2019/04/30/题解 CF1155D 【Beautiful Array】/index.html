@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="$Description$给定一个值$x$,一个长度为$n$的数组$a$，你可以选择一段区间，让这段区间每个数都乘上$x$,求最大连续子段和 $Solution:$三个数组,$f_{i}$表示以$i$结尾的最大子段和,$g_{i}$表示选定区间还未完结($a_{i}$乘上$x$)的最大子段和，$h_{i}$表示已经选定区间已经在$1$~$(i-1)$中一处结尾$(a_{i}$不乘$x)$  $f_">
+  <meta name="description" content="$Description$给定一个值$x$,一个长度为$n$的数组$a$，你可以选择一段区间，让这段区间每个数都乘上$x$,求最大连续子段和">
 <meta name="keywords" content="$DP$">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 CF1155D 【Beautiful Array】">
 <meta property="og:url" content="http://yoursite.com/2019/04/30/题解 CF1155D 【Beautiful Array】/index.html">
 <meta property="og:site_name" content="heyuanjie的blog">
-<meta property="og:description" content="$Description$给定一个值$x$,一个长度为$n$的数组$a$，你可以选择一段区间，让这段区间每个数都乘上$x$,求最大连续子段和 $Solution:$三个数组,$f_{i}$表示以$i$结尾的最大子段和,$g_{i}$表示选定区间还未完结($a_{i}$乘上$x$)的最大子段和，$h_{i}$表示已经选定区间已经在$1$~$(i-1)$中一处结尾$(a_{i}$不乘$x)$  $f_">
+<meta property="og:description" content="$Description$给定一个值$x$,一个长度为$n$的数组$a$，你可以选择一段区间，让这段区间每个数都乘上$x$,求最大连续子段和">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-01T05:27:15.746Z">
+<meta property="og:updated_time" content="2022-11-17T15:58:46.677Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 CF1155D 【Beautiful Array】">
-<meta name="twitter:description" content="$Description$给定一个值$x$,一个长度为$n$的数组$a$，你可以选择一段区间，让这段区间每个数都乘上$x$,求最大连续子段和 $Solution:$三个数组,$f_{i}$表示以$i$结尾的最大子段和,$g_{i}$表示选定区间还未完结($a_{i}$乘上$x$)的最大子段和，$h_{i}$表示已经选定区间已经在$1$~$(i-1)$中一处结尾$(a_{i}$不乘$x)$  $f_">
+<meta name="twitter:description" content="$Description$给定一个值$x$,一个长度为$n$的数组$a$，你可以选择一段区间，让这段区间每个数都乘上$x$,求最大连续子段和">
 
 
 
@@ -412,7 +412,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-01 13:27:15" itemprop="dateModified" datetime="2019-05-01T13:27:15+08:00">2019-05-01</time>
+                <time title="修改时间：2022-11-17 23:58:46" itemprop="dateModified" datetime="2022-11-17T23:58:46+08:00">2022-11-17</time>
               
             
           </span>
@@ -446,6 +446,7 @@
 
       
         <h2 id="Description"><a href="#Description" class="headerlink" title="$Description$"></a>$Description$</h2><p>给定一个值$x$,一个长度为$n$的数组$a$，你可以选择一段区间，让这段区间每个数都乘上$x$,求最大连续子段和</p>
+<a id="more"></a>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="$Solution:$"></a>$Solution:$</h2><p>三个数组,$f_{i}$表示以$i$结尾的最大子段和,$g_{i}$表示选定区间还未完结($a_{i}$乘上$x$)的最大子段和，$h_{i}$表示已经选定区间已经在$1$~$(i-1)$中一处结尾$(a_{i}$不乘$x)$</p>
 <p> $f_{i}=max(f_{i-1},0)+a_{i}$</p>
 <p> $g_{i}=max(g_{i-1},f_{i-1},0)+a_{i}\times x$</p>

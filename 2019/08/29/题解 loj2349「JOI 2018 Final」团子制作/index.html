@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="heyuanjie的blog">
 <meta property="og:description" content="$Description$你是一个制作团子的师傅，现在，你正想用竹签把团子串成一串。 团子被放置在长为$N$行，宽为$M$列的隔开的格子里，每个格子里都放着一个团子。每个团子的颜色是红、绿与白中的一种。 你可以选择三个从左到右，或者从上到下的连续的格子，把格子中的团子串成一串，按照这个顺序，一串团子串上正好会有三个团子。 现在，你希望尽可能多做些颜色按照红绿白顺序的团子串，并且团子在串上的顺序必须">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-29T15:17:27.419Z">
+<meta property="og:updated_time" content="2022-11-18T04:19:09.996Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 loj2349「JOI 2018 Final」团子制作">
 <meta name="twitter:description" content="$Description$你是一个制作团子的师傅，现在，你正想用竹签把团子串成一串。 团子被放置在长为$N$行，宽为$M$列的隔开的格子里，每个格子里都放着一个团子。每个团子的颜色是红、绿与白中的一种。 你可以选择三个从左到右，或者从上到下的连续的格子，把格子中的团子串成一串，按照这个顺序，一串团子串上正好会有三个团子。 现在，你希望尽可能多做些颜色按照红绿白顺序的团子串，并且团子在串上的顺序必须">
@@ -395,12 +395,24 @@
                 
               
 
-              <time title="创建时间：2019-08-29 23:17:06 / 修改时间：23:17:27" itemprop="dateCreated datePublished" datetime="2019-08-29T23:17:06+08:00">2019-08-29</time>
+              <time title="创建时间：2019-08-29 23:17:06" itemprop="dateCreated datePublished" datetime="2019-08-29T23:17:06+08:00">2019-08-29</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2022-11-18 12:19:09" itemprop="dateModified" datetime="2022-11-18T12:19:09+08:00">2022-11-18</time>
               
             
           </span>
@@ -439,6 +451,7 @@
 <p>现在，你希望尽可能多做些颜色按照红绿白顺序的团子串，并且团子在串上的顺序必须与从格子中取出的顺序相同。需要注意的是，同一个团子只能被串在一串团子串上。</p>
 <p>你最多能制作多少串团子串呢？</p>
 <p>给出放置在每个格子上的团子的颜色，你需要计算最多能制作的团子串的数量。团子串的颜色必须按照红、绿、白的顺序。</p>
+<a id="more"></a>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>很有意思的$DP,$考虑团子串中间的$G$不在同一对角线的团子串不会互相影响，所以在对角线上进行$DP.$对于一条对角线，我们从左下向右上$DP,f_{i,0/1}$表示当前对角线从左下到右上第$i$个团子可以与左右或上下的团子构成团子串$,0/1$表示跟左右/上下构成团子串。</p>
 <p>$f_{i,j}$只能由$f_{k,t}(0\leqslant k&lt; i,t=0/1)$或$f_{i-1,j}$转移过来。</p>
 <p>转移很好想，但是难想在考虑到不在同一对角线的团子串不会互相影响。</p>

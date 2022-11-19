@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="在任意时刻，我们关心的只有我们已经把多少点加进树了，以及树的最大树高是多少。 设$f[S][i]$为当前树已经包含集合$S$中的点，并且树高是$i$。 那么怎么判断$S_{0}$在转移中是否合法呢？我们设$G_{S}$是$S$能拓展到的边的集合，显然$G$数组是可以预处理出来的。 $f[S][i]=min(f[S_0][i-1]+pay)$，其中满足$S_{0}$是$S$的子集，通过$S_{0}$">
+  <meta name="description" content="题意$:$给定一张 $n$个点$,m$条边的有重边的图，找到一个生成树，使得每条边的权值$ \times$到根的距离最小">
 <meta name="keywords" content="状压$DP$">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 P3959 【宝藏】">
 <meta property="og:url" content="http://yoursite.com/2019/04/30/题解 P3959 【宝藏】/index.html">
 <meta property="og:site_name" content="heyuanjie的blog">
-<meta property="og:description" content="在任意时刻，我们关心的只有我们已经把多少点加进树了，以及树的最大树高是多少。 设$f[S][i]$为当前树已经包含集合$S$中的点，并且树高是$i$。 那么怎么判断$S_{0}$在转移中是否合法呢？我们设$G_{S}$是$S$能拓展到的边的集合，显然$G$数组是可以预处理出来的。 $f[S][i]=min(f[S_0][i-1]+pay)$，其中满足$S_{0}$是$S$的子集，通过$S_{0}$">
+<meta property="og:description" content="题意$:$给定一张 $n$个点$,m$条边的有重边的图，找到一个生成树，使得每条边的权值$ \times$到根的距离最小">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-01T05:28:45.309Z">
+<meta property="og:updated_time" content="2022-11-17T16:01:31.715Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 P3959 【宝藏】">
-<meta name="twitter:description" content="在任意时刻，我们关心的只有我们已经把多少点加进树了，以及树的最大树高是多少。 设$f[S][i]$为当前树已经包含集合$S$中的点，并且树高是$i$。 那么怎么判断$S_{0}$在转移中是否合法呢？我们设$G_{S}$是$S$能拓展到的边的集合，显然$G$数组是可以预处理出来的。 $f[S][i]=min(f[S_0][i-1]+pay)$，其中满足$S_{0}$是$S$的子集，通过$S_{0}$">
+<meta name="twitter:description" content="题意$:$给定一张 $n$个点$,m$条边的有重边的图，找到一个生成树，使得每条边的权值$ \times$到根的距离最小">
 
 
 
@@ -412,7 +412,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-01 13:28:45" itemprop="dateModified" datetime="2019-05-01T13:28:45+08:00">2019-05-01</time>
+                <time title="修改时间：2022-11-18 00:01:31" itemprop="dateModified" datetime="2022-11-18T00:01:31+08:00">2022-11-18</time>
               
             
           </span>
@@ -445,7 +445,9 @@
       
 
       
-        <p>在任意时刻，我们关心的只有我们已经把多少点加进树了，以及树的最大树高是多少。</p>
+        <p>题意$:$给定一张 $n$个点$,m$条边的<strong>有重边</strong>的图，找到一个生成树，使得每条边的权值$ \times$到根的距离最小</p>
+<a id="more"></a>
+<p>在任意时刻，我们关心的只有我们已经把多少点加进树了，以及树的最大树高是多少。</p>
 <p>设$f[S][i]$为当前树已经包含集合$S$中的点，并且树高是$i$。</p>
 <p>那么怎么判断$S_{0}$在转移中是否合法呢？我们设$G_{S}$是$S$能拓展到的边的集合，显然$G$数组是可以预处理出来的。</p>
 <p>$f[S][i]=min(f[S_0][i-1]+pay)$，其中满足$S_{0}$是$S$的子集，通过$S_{0}$加边一定可以联结成$S$。$pay$是这次加边的花费。</p>

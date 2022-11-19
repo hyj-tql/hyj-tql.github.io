@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="当$k=1$时，$a[i]=\frac{1}{2}[a[i-1]-(a[i]-a[i-1])]+\frac{1}{2}[a[i+1]+(a[i+1]-a[i])]$ 经过化简后$a[i]=a[i+1]+a[i-1]-a[i]$,用差分数组表示就是: $c[i]=a[i]-a[i-1]$ $c[i]=(a[i+1]+a[i-1]-a[i])-a[i-1]$ $c[i]=a[i+1]-a[i]$ $c">
+  <meta name="description" content="有$n$只兔子在一个数轴上，兔子为了方便起见从$ 1 $到$n $标号，第$ i $只兔子的初始坐标为$x_i$。兔子会以以下的方式在数轴上锻炼：一轮包含$m$个跳跃，第 $j$ 个是兔子$a[j] (2 \leqslant a[j] \leqslant N−1)$，$a$是给出的长度为$m$的数组跳一下，这一下从 兔子$a[j]− 1 $和 兔子$a[j] + 1$中等概率的选一个$（$假设选了">
 <meta name="keywords" content="思维题">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解 AT2164 【Rabbit Exercise】">
 <meta property="og:url" content="http://yoursite.com/2019/04/30/题解 AT2164 【Rabbit Exercise】/index.html">
 <meta property="og:site_name" content="heyuanjie的blog">
-<meta property="og:description" content="当$k=1$时，$a[i]=\frac{1}{2}[a[i-1]-(a[i]-a[i-1])]+\frac{1}{2}[a[i+1]+(a[i+1]-a[i])]$ 经过化简后$a[i]=a[i+1]+a[i-1]-a[i]$,用差分数组表示就是: $c[i]=a[i]-a[i-1]$ $c[i]=(a[i+1]+a[i-1]-a[i])-a[i-1]$ $c[i]=a[i+1]-a[i]$ $c">
+<meta property="og:description" content="有$n$只兔子在一个数轴上，兔子为了方便起见从$ 1 $到$n $标号，第$ i $只兔子的初始坐标为$x_i$。兔子会以以下的方式在数轴上锻炼：一轮包含$m$个跳跃，第 $j$ 个是兔子$a[j] (2 \leqslant a[j] \leqslant N−1)$，$a$是给出的长度为$m$的数组跳一下，这一下从 兔子$a[j]− 1 $和 兔子$a[j] + 1$中等概率的选一个$（$假设选了">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-01T05:37:11.632Z">
+<meta property="og:updated_time" content="2022-11-17T16:35:51.989Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解 AT2164 【Rabbit Exercise】">
-<meta name="twitter:description" content="当$k=1$时，$a[i]=\frac{1}{2}[a[i-1]-(a[i]-a[i-1])]+\frac{1}{2}[a[i+1]+(a[i+1]-a[i])]$ 经过化简后$a[i]=a[i+1]+a[i-1]-a[i]$,用差分数组表示就是: $c[i]=a[i]-a[i-1]$ $c[i]=(a[i+1]+a[i-1]-a[i])-a[i-1]$ $c[i]=a[i+1]-a[i]$ $c">
+<meta name="twitter:description" content="有$n$只兔子在一个数轴上，兔子为了方便起见从$ 1 $到$n $标号，第$ i $只兔子的初始坐标为$x_i$。兔子会以以下的方式在数轴上锻炼：一轮包含$m$个跳跃，第 $j$ 个是兔子$a[j] (2 \leqslant a[j] \leqslant N−1)$，$a$是给出的长度为$m$的数组跳一下，这一下从 兔子$a[j]− 1 $和 兔子$a[j] + 1$中等概率的选一个$（$假设选了">
 
 
 
@@ -412,7 +412,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-01 13:37:11" itemprop="dateModified" datetime="2019-05-01T13:37:11+08:00">2019-05-01</time>
+                <time title="修改时间：2022-11-18 00:35:51" itemprop="dateModified" datetime="2022-11-18T00:35:51+08:00">2022-11-18</time>
               
             
           </span>
@@ -445,7 +445,9 @@
       
 
       
-        <p>当$k=1$时，$a[i]=\frac{1}{2}[a[i-1]-(a[i]-a[i-1])]+\frac{1}{2}[a[i+1]+(a[i+1]-a[i])]$</p>
+        <p>有$n$只兔子在一个数轴上，兔子为了方便起见从$ 1 $到$n $标号，第$ i $只兔子的初始坐标为$x_i$。兔子会以以下的方式在数轴上锻炼：一轮包含$m$个跳跃，第 $j$ 个是兔子$a[j] (2 \leqslant a[j] \leqslant N−1)$，$a$是给出的长度为$m$的数组跳一下，这一下从 兔子$a[j]− 1 $和 兔子$a[j] + 1$中等概率的选一个$（$假设选了$ x）$，那么$a[j]$号兔子 会跳到它当前坐标关于$x$的坐标的对称点。（注意，即使兔子的位置顺序变化了，但是编号仍保持不变，这里按兔子编号算）兔子会进行$k$轮跳跃，对每个兔子，请你求出它最后坐标的期望值。</p>
+<a id="more"></a>
+<p>当$k=1$时，$a[i]=\frac{1}{2}[a[i-1]-(a[i]-a[i-1])]+\frac{1}{2}[a[i+1]+(a[i+1]-a[i])]$</p>
 <p>经过化简后$a[i]=a[i+1]+a[i-1]-a[i]$,用差分数组表示就是:</p>
 <p>$c[i]=a[i]-a[i-1]$</p>
 <p>$c[i]=(a[i+1]+a[i-1]-a[i])-a[i-1]$</p>
